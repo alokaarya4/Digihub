@@ -1,4 +1,4 @@
-const { model, Schema } require("");
+const { model, Schema } = require ("../connection");
 
 const myschema = new Schema({
      title: String,
@@ -8,3 +8,4 @@ const myschema = new Schema({
      createdAt: Date,
      description: String
 })
+

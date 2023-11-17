@@ -1,4 +1,4 @@
-const { model, Schema } require("");
+const { model, Schema } = require ("../connection");
 
 const myschema = new Schema({
     badge:{type: types.ObjectId, ref: "Badge"},
