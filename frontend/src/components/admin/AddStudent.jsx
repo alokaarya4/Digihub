@@ -2,8 +2,15 @@ import React from 'react'
 
 const AddStudent = () => {
   return (
+
+   <div class="grid gap-4 grid-cols-2 grid-rows-1">
+     
+    <div className="card shadow-lg rounded-5 mt-6 bg-gray-200 ">
+        <div className="card-body p-10">
+           <h1 className="text-center font-semibold">Add student</h1>
     <form>
     <div className="relative z-0 w-50 mb-6 group">
+    
       <input
         type="email"
         name="floating_email"
@@ -120,6 +127,8 @@ const AddStudent = () => {
         </label>
       </div>
     </div>
+
+    
     <button
       type="submit"
       className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
@@ -127,7 +136,35 @@ const AddStudent = () => {
       Submit
     </button>
   </form>
+  </div>
+  </div>
+ 
+ 
+ 
+ <div className="card shadow-lg rounded-5 mt-6 bg-gray-200 ">
+        <div className="card-body p-10">
+           <h1 className="text-center font-semibold"></h1>
+   
+    <div className="relative z-0 w-50 mb-6 group">
+    
+
+    <img src="https://media.licdn.com/dms/image/D4D22AQGcPi19f7_Q3w/feedshare-shrink_800/0/1694859086007?e=1703116800&v=beta&t=IQGYsWOZI97knFMw57KfVtIDwuHTlVrKYiQSJwYcsZg" alt="" />
+      
+      </div>
+    </div>
+
+  </div>
+  </div>
   
+
+
+ 
+
+
+
+   
+
+
   )
 }
 

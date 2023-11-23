@@ -63,7 +63,9 @@ import * as Yup from 'yup';
   
   return (
     <>
-    <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+     <div className="card shadow-lg rounded-5 mt-6 bg-transparent ">
+     <div className="card-body p-10">
+     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8"> 
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <img
           className="mx-auto h-10 w-auto"
@@ -127,6 +129,8 @@ import * as Yup from 'yup';
         </form>
       </div>
     </div>
+    </div>
+     </div> 
   </>
 )
 }
