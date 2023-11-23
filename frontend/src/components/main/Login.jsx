@@ -1,6 +1,66 @@
-import React from 'react'
+import { useFormik } from "formik";
+import React from "react";
+import useAppContext from "../../context/AppContext";
+import * as Yup from 'yup'; 
 
-const Login = () => {
+  const loginSchema = Yup.object().shape({
+    email: Yup.string().email('Invalid email').required('Email is Required'),
+    password : Yup.string().required('Password is Required')
+  });
+  
+  const Login = () => {
+  
+    const { setLoggedIn } = useAppContext();
+  
+    // initializing formik
+    const loginForm = useFormik({
+      initialValues: {
+        email: '',
+        password : ''
+      },
+  
+      onSubmit: async (values, { resetForm }) => {
+        console.log(values);
+        console.log(import.meta.env.VITE_API_URL);
+  
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/user/authenticate`, {
+          method: 'POST',
+          body: JSON.stringify(values),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+  
+        console.log(res.status);
+        if(res.status === 200){
+          Swal.fire({
+            icon : 'success',
+            title : 'Login Success!!'
+          });
+  
+          const data = await res.json();
+          sessionStorage.setItem('user', JSON.stringify(data));
+          setLoggedIn(true);
+  
+        }else if(res.status === 401){
+          Swal.fire({
+            icon : 'error',
+            title : 'Login Failed!!',
+            text: 'Email or Password is incorrect'
+          })
+        }else{
+          Swal.fire({
+            icon : 'error',
+            title : 'Something went wrong!!'
+          })
+        }
+  
+        // submit values to the backend
+      },
+  
+      validationSchema: loginSchema
+    });
+  
   return (
     <>
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
