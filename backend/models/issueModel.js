@@ -7,3 +7,5 @@ const myschema = new Schema({
     issueDate: Date,
 
 })
+
+module.exports = model('issue', myschema);

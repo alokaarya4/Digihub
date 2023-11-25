@@ -1,168 +1,190 @@
+import { useFormik } from 'formik';
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const AddStudent = () => {
+
+  const Navigate = useNavigate(); 
+
+  const AddBadge = useFormik({
+      initialValues: {
+          fullname: '',
+          refId: '',
+          email: '',
+          year: '',
+          course: '',
+          image: ''
+
+   },
+      
+
+      onSubmit: async (values) => {
+  }})
+
+
+
   return (
 
-   <div class="grid gap-4 grid-cols-2 grid-rows-1">
-     
-    <div className="card shadow-lg rounded-5 mt-6 bg-gray-200 ">
+    <div class="grid gap-4 grid-cols-2 grid-rows-1">
+
+      <div className="card shadow-lg rounded-5 mt-6 bg-gray-200 ">
         <div className="card-body p-10">
-           <h1 className="text-center font-semibold">Add student</h1>
-    <form>
-    <div className="relative z-0 w-50 mb-6 group">
-    
-      <input
-        type="email"
-        name="floating_email"
-        id="floating_email"
-        className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-        placeholder=" "
-        required=""
-      />
-      <label
-        htmlFor="floating_email"
-        className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-      >
-        Email address
-      </label>
-    </div>
-    <div className="relative z-0 w-full mb-6 group">
-      <input
-        type="password"
-        name="floating_password"
-        id="floating_password"
-        className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-        placeholder=" "
-        required=""
-      />
-      <label
-        htmlFor="floating_password"
-        className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-      >
-        Password
-      </label>
-    </div>
-    <div className="relative z-0 w-full mb-6 group">
-      <input
-        type="password"
-        name="repeat_password"
-        id="floating_repeat_password"
-        className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-        placeholder=" "
-        required=""
-      />
-      <label
-        htmlFor="floating_repeat_password"
-        className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-      >
-        Confirm password
-      </label>
-    </div>
-    <div className="grid md:grid-cols-2 md:gap-6">
-      <div className="relative z-0 w-full mb-6 group">
-        <input
-          type="text"
-          name="floating_first_name"
-          id="floating_first_name"
-          className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-          placeholder=" "
-          required=""
-        />
-        <label
-          htmlFor="floating_first_name"
-          className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-        >
-          First name
-        </label>
-      </div>
-      <div className="relative z-0 w-full mb-6 group">
-        <input
-          type="text"
-          name="floating_last_name"
-          id="floating_last_name"
-          className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-          placeholder=" "
-          required=""
-        />
-        <label
-          htmlFor="floating_last_name"
-          className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-        >
-          Last name
-        </label>
-      </div>
-    </div>
-    <div className="grid md:grid-cols-2 md:gap-6">
-      <div className="relative z-0 w-full mb-6 group">
-        <input
-          type="tel"
-          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-          name="floating_phone"
-          id="floating_phone"
-          className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-          placeholder=" "
-          required=""
-        />
-        <label
-          htmlFor="floating_phone"
-          className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-        >
-          Phone number (123-456-7890)
-        </label>
-      </div>
-      <div className="relative z-0 w-full mb-6 group">
-        <input
-          type="text"
-          name="floating_company"
-          id="floating_company"
-          className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-          placeholder=" "
-          required=""
-        />
-        <label
-          htmlFor="floating_company"
-          className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-        >
-          Company (Ex. Google)
-        </label>
-      </div>
-    </div>
+          <h1 className="text-center font-semibold">Add student</h1>
+          <form>
+            <div className="relative z-0 w-50 mb-6 group">
 
-    
-    <button
-      type="submit"
-      className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-    >
-      Submit
-    </button>
-  </form>
-  </div>
-  </div>
- 
- 
- 
- <div className="card shadow-lg rounded-5 mt-6 bg-gray-200 ">
+              <input
+                type="email"
+                name="floating_email"
+                id="floating_email"
+                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                placeholder=" "
+                required=""
+              />
+              <label
+                htmlFor="floating_email"
+                className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              >
+                Email address
+              </label>
+            </div>
+            <div className="relative z-0 w-full mb-6 group">
+              <input
+                type="password"
+                name="floating_password"
+                id="floating_password"
+                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                placeholder=" "
+                required=""
+              />
+              <label
+                htmlFor="floating_password"
+                className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              >
+                Password
+              </label>
+            </div>
+            <div className="relative z-0 w-full mb-6 group">
+              <input
+                type="password"
+                name="repeat_password"
+                id="floating_repeat_password"
+                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                placeholder=" "
+                required=""
+              />
+              <label
+                htmlFor="floating_repeat_password"
+                className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              >
+                Confirm password
+              </label>
+            </div>
+            <div className="grid md:grid-cols-2 md:gap-6">
+              <div className="relative z-0 w-full mb-6 group">
+                <input
+                  type="text"
+                  name="floating_first_name"
+                  id="floating_first_name"
+                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  placeholder=" "
+                  required=""
+                />
+                <label
+                  htmlFor="floating_first_name"
+                  className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                >
+                  First name
+                </label>
+              </div>
+              <div className="relative z-0 w-full mb-6 group">
+                <input
+                  type="text"
+                  name="floating_last_name"
+                  id="floating_last_name"
+                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  placeholder=" "
+                  required=""
+                />
+                <label
+                  htmlFor="floating_last_name"
+                  className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                >
+                  Last name
+                </label>
+              </div>
+            </div>
+            <div className="grid md:grid-cols-2 md:gap-6">
+              <div className="relative z-0 w-full mb-6 group">
+                <input
+                  type="tel"
+                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                  name="floating_phone"
+                  id="floating_phone"
+                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  placeholder=" "
+                  required=""
+                />
+                <label
+                  htmlFor="floating_phone"
+                  className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                >
+                  Phone number (123-456-7890)
+                </label>
+              </div>
+              <div className="relative z-0 w-full mb-6 group">
+                <input
+                  type="text"
+                  name="floating_company"
+                  id="floating_company"
+                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  placeholder=" "
+                  required=""
+                />
+                <label
+                  htmlFor="floating_company"
+                  className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                >
+                  Company (Ex. Google)
+                </label>
+              </div>
+            </div>
+
+
+            <button
+              type="submit"
+              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+
+
+
+      <div className="card shadow-lg rounded-5 mt-6 bg-gray-200 ">
         <div className="card-body p-10">
-           <h1 className="text-center font-semibold"></h1>
-   
-    <div className="relative z-0 w-50 mb-6 group">
-    
+          <h1 className="text-center font-semibold"></h1>
 
-    <img src="https://media.licdn.com/dms/image/D4D22AQGcPi19f7_Q3w/feedshare-shrink_800/0/1694859086007?e=1703116800&v=beta&t=IQGYsWOZI97knFMw57KfVtIDwuHTlVrKYiQSJwYcsZg" alt="" />
-      
+          <div className="relative z-0 w-50 mb-6 group">
+
+
+            <img src="https://media.licdn.com/dms/image/D4D22AQGcPi19f7_Q3w/feedshare-shrink_800/0/1694859086007?e=1703116800&v=beta&t=IQGYsWOZI97knFMw57KfVtIDwuHTlVrKYiQSJwYcsZg" alt="" />
+
+          </div>
+        </div>
+
       </div>
     </div>
 
-  </div>
-  </div>
-  
-
-
- 
 
 
 
-   
+
+
+
+
 
 
   )

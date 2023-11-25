@@ -9,3 +9,5 @@ const myschema = new Schema({
      description: String
 })
 
+module.exports = model('badge', myschema);
+

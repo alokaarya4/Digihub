@@ -1,4 +1,4 @@
-const { model, Schema } require = ("../connection");
+const { model, Schema, types } = require("../connection");
 
 const myschema = new Schema({
     email: {type: String, required: true},
@@ -7,3 +7,5 @@ const myschema = new Schema({
     avatar: {type: String, default: ""},
     createdAt: Date
 })
+
+module.exports = model('users', myschema);
