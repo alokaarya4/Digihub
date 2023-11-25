@@ -17,11 +17,11 @@ const AddBadge = () => {
             badgeID: '',
             description: '',
             file: ''
-        },   
+        }, 
+        
 
         onSubmit: async (values) => {
-    }
-    })
+    }})
 
 
 
@@ -30,7 +30,10 @@ const AddBadge = () => {
 
 
   return (
-    <div className="w-full max-w-xl p-10 bg-white border border-gray-200 rounded-lg shadow sm:p-10 md:p-8 dark:bg-gray-800 dark:border-gray-700 mx-10 my-10" >
+    <div className="d-flex justify-content-center align-items-center vh-100">
+      <div className="card w-25 shadow-lg rounded-5">
+        <div className="card-body p-5"></div>
+    // <div className="w-full max-w-xl p-10 bg-white border border-gray-200 rounded-lg shadow sm:p-10 md:p-8 dark:bg-gray-800 dark:border-gray-700 mx-10 my-10" >
     <form className="space-y-6" action="#">
       <h5 className="text-xl font-medium text-gray-900 dark:text-white text-center">
         Add Badge Form
@@ -153,7 +156,10 @@ const AddBadge = () => {
         </a>
       </div>
     </form>
+   </div>
   </div>
+  </div>
+ 
   
   )
 }
