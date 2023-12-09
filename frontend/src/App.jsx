@@ -8,26 +8,27 @@ import AddStudent from './components/admin/AddStudent';
 import AddBadge from './components/admin/AddBadge';
 import ManageUser from './components/admin/ManageUser';
 import Signup from './components/main/SignUp';
+import ManageStudent from './components/admin/ManageStudent';
 
 function App() {
 
   return (
     <>
       <BrowserRouter>
-      <AppProvider>
-        <Routes>
+        <AppProvider>
+          <Routes>
 
-          <Route path='/' element={<Navigate to="/main/home" />} />
-          <Route path='main' element={<Main />}>
-            <Route path='home' element={<Home />} />
-            <Route path='login' element={<Login />} />
-            <Route path='Signup' element={<Signup />} />
-          </Route>
+            <Route path='/' element={<Navigate to="/main/home" />} />
+            <Route path='main' element={<Main />}>
+              <Route path='home' element={<Home />} />
+              <Route path='login' element={<Login />} />
+              <Route path='Signup' element={<Signup />} />
+            </Route>
 
 
-          <Route path='user' element={<Main />}>
-            <Route path='home' element={<Home />} />
-          </Route>
+            <Route path='user' element={<Main />}>
+              <Route path='home' element={<Home />} />
+            </Route>
 
             <Route path='admin' element={<Main />}>
               <Route path='home' element={<Home />} />
@@ -36,11 +37,12 @@ function App() {
               <Route path='addstudent' element={<AddStudent />} />
               <Route path='addbadge' element={<AddBadge />} />
               <Route path='manageuser' element={<ManageUser />} />
-              </Route>
+              <Route path='managestudent' element={<ManageStudent />} />
+            </Route>
 
 
           </Routes>
-    </AppProvider >
+        </AppProvider >
       </BrowserRouter>
     </>
 
