@@ -7,6 +7,7 @@ import { AppProvider } from './context/AppContext';
 import AddStudent from './components/admin/AddStudent';
 import AddBadge from './components/admin/AddBadge';
 import ManageUser from './components/admin/ManageUser';
+import Signup from './components/main/SignUp';
 
 function App() {
 
@@ -15,11 +16,15 @@ function App() {
       <BrowserRouter>
       <AppProvider>
         <Routes>
+
           <Route path='/' element={<Navigate to="/main/home" />} />
           <Route path='main' element={<Main />}>
             <Route path='home' element={<Home />} />
             <Route path='login' element={<Login />} />
+            <Route path='Signup' element={<Signup />} />
           </Route>
+
+
           <Route path='user' element={<Main />}>
             <Route path='home' element={<Home />} />
           </Route>
@@ -27,11 +32,13 @@ function App() {
             <Route path='admin' element={<Main />}>
               <Route path='home' element={<Home />} />
               <Route path='login' element={<Login />} />
+              <Route path='Signup' element={<Signup />} />
               <Route path='addstudent' element={<AddStudent />} />
               <Route path='addbadge' element={<AddBadge />} />
               <Route path='manageuser' element={<ManageUser />} />
+              </Route>
 
-            </Route>
+
           </Routes>
     </AppProvider >
       </BrowserRouter>

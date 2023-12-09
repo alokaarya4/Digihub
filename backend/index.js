@@ -6,6 +6,7 @@ const port = 5000;
 const cors = require('cors');
 
 const UserRouter = require('./routers/userRouter');
+const StudentRouter = require('./routers/studentRouter');
 const UtilRouter = require('./routers/util');
 
 app.use(cors({
@@ -14,6 +15,7 @@ app.use(cors({
 app.use(express.json());
 
 app.use('/user', UserRouter);
+app.use('/student', StudentRouter);
 app.use('/util', UtilRouter);
 
 app.use(express.static('./uploads'));

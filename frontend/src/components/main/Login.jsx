@@ -22,14 +22,16 @@ import * as Yup from 'yup';
       onSubmit: async (values, { resetForm }) => {
         console.log(values);
         console.log(import.meta.env.VITE_API_URL);
-  
-        const res = await fetch(`${import.meta.env.VITE_API_URL}/user/authenticate`, {
-          method: 'POST',
-          body: JSON.stringify(values),
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        });
+
+          // sending request to backend
+      const res = await fetch('http://localhost:5000/user/add', {
+        method: 'POST',
+        body : JSON.stringify(values),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+
   
         console.log(res.status);
         if(res.status === 200){
