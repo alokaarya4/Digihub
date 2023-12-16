@@ -41,7 +41,7 @@ const ManageUser = () => {
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>Loaction</th>
+                    <th>Location</th>
                     <th>Photos</th>
                     <th></th>
                 </tr>
