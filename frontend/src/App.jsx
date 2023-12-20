@@ -12,6 +12,10 @@ import ManageStudent from './components/admin/ManageStudent';
 import ResetPassword from './components/main/ResetPassword';
 import Admin from './components/admin';
 import ManageBadges from './components/admin/ManageBadges';
+import Student from './components/main/Student';
+import VerifyBadge from './components/main/VerifyBadge';
+import BrowserBadge from './components/main/BrowserBadge';
+import ViewBadge from './components/main/ViewBadge';
 
 function App() {
 
@@ -27,6 +31,10 @@ function App() {
               <Route path='login' element={<Login />} />
               <Route path='Signup' element={<Signup />} />
               <Route path='ResetPassword' element={<ResetPassword />} />
+              <Route path='Student' element={<Student />} />
+              <Route path='verifybadge' element={<VerifyBadge />} />
+              <Route path='browserbadge' element={<BrowserBadge />} />
+              <Route path='viewbadge' element={<ViewBadge/>} />
             </Route>
 
 

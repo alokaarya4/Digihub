@@ -36,37 +36,8 @@ const ManageUser = () => {
     }
 
     const displayUser = () => {
-        return <table className='table table-dark table-striped'>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Location</th>
-                    <th>Photos</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                {
-                    userlist.map((user) => (
-                        <tr>
-                            <td>{user._id}</td>
-                            <td>{user.name}</td>
-                            <td>{user.location}</td>
-                            <td>
-                                <img width={50} className='img-fluid' src={'http://localhost:5173/'+user.image} alt="" />
-                            </td>
-                            <td>
-                                <button className='btn btn-danger' onClick={() => { deleteUser(user._id) }}>Delete User</button>
-                            </td>
-                            <td>
-                                <button className='btn btn-primary' onClick={ () => { navigate('/updateuser/'+user._id) } }>Edit User</button>
-                            </td>
-                        </tr>
-                    ))
-                }
-            </tbody>
-        </table>
+        return 
+       
     }
 
   return (
