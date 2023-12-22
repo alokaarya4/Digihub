@@ -57,10 +57,10 @@ const ManageUser = () => {
                                 <img width={50} className='img-fluid' src={'http://localhost:5173/'+user.image} alt="" />
                             </td>
                             <td>
-                                <button className='btn btn-danger' onClick={() => { deleteUser(user._id) }}>Delete User</button>
+                                <button className='text-white bg-red-600' onClick={() => { deleteUser(user._id) }}>Delete User</button>
                             </td>
                             <td>
-                                <button className='btn btn-primary' onClick={ () => { navigate('/updateuser/'+user._id) } }>Edit User</button>
+                                <button className='text-white bg bg-sky-400' onClick={ () => { navigate('/updateuser/'+user._id) } }>Edit User</button>
                             </td>
                         </tr>
                     ))

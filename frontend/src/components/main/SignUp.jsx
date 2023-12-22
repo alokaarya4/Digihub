@@ -1,7 +1,8 @@
 import { useFormik } from "formik";
+import { enqueueSnackbar } from "notistack";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
+// import Swal from "sweetalert2";
 
 const Signup = () => {
 
@@ -32,18 +33,10 @@ const Signup = () => {
       console.log(res.status);
 
       if(res.status === 200){
-        Swal.fire({
-          icon : 'success',
-          title : 'Signup Success!!',
-          text: 'Now Login to Continue'
-        });
-        navigate('/login');
+        enqueueSnackbar('User Added Successfully', { variant: 'success', anchorOrigin: { vertical: 'top', horizontal: 'center', }, });
+        navigate('/main/login');
       }else{
-        Swal.fire({
-          icon : 'error',
-          title : 'Oops!!',
-          text: 'Some Error Occured'
-        });
+        enqueueSnackbar('Something went wrong', { variant: 'error', anchorOrigin: { vertical: 'top', horizontal: 'center', }, });
       }
     }
   })
@@ -60,11 +53,12 @@ const Signup = () => {
     });
 
     console.log(res.status);
+    
   };
 
   return (
     
-    <form className="max-w-sm mx-auto">
+    <form className="max-w-sm mx-auto" onSubmit={signupForm.handleSubmit}>
     <div className="mb-5">
       <label
         htmlFor="name"
@@ -74,10 +68,12 @@ const Signup = () => {
       </label>
       <input
         type="text"
-        id="text"
+        id="name"
         className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
         placeholder="name@flowbite.com"
         required=""
+        onChange={signupForm.handleChange}
+        value={signupForm.values.name}
       />
     </div>
     <div className="mb-5">
@@ -92,6 +88,8 @@ const Signup = () => {
         id="email"
         className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
         required=""
+        onChange={signupForm.handleChange}
+        value={signupForm.values.email}
       />
     </div>
     <div className="mb-5">
@@ -103,9 +101,11 @@ const Signup = () => {
       </label>
       <input
         type="password"
-        id="repeat-password"
+        id="password"
         className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
         required=""
+        onChange={signupForm.handleChange}
+        value={signupForm.values.password}
       />
     </div>
     <div className="flex items-start mb-5">

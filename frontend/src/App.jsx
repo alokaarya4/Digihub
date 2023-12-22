@@ -9,11 +9,13 @@ import AddBadge from './components/admin/AddBadge';
 import ManageUser from './components/admin/ManageUser';
 import Signup from './components/main/SignUp';
 import ManageStudent from './components/admin/ManageStudent';
+import { SnackbarProvider } from 'notistack';
 
 function App() {
 
   return (
     <>
+    <SnackbarProvider maxSnack={3}>
       <BrowserRouter>
         <AppProvider>
           <Routes>
@@ -23,7 +25,11 @@ function App() {
               <Route path='home' element={<Home />} />
               <Route path='login' element={<Login />} />
               <Route path='Signup' element={<Signup />} />
+              <Route path='Signup' element={<Signup />} />
+              <Route path='resetpassword' element={<resetpassword/>} />
+              
             </Route>
+            
 
 
             <Route path='user' element={<Main />}>
@@ -44,6 +50,7 @@ function App() {
           </Routes>
         </AppProvider >
       </BrowserRouter>
+      </SnackbarProvider>
     </>
 
   )

@@ -20,7 +20,7 @@ router.post('/add', (req, res) => {
     });
 });
 
-router.get("/getall", verifyingToken, (req, res) => {
+router.get("/getall", (req, res) => {
     Model.find({})
     .then((result) => {
         res.json(result);

@@ -6,6 +6,7 @@ const myschema = new Schema({
     password: {type: String, required: true},   
     avatar: {type: String, default: ""},
     createdAt: Date
-})
+    Emil_Verified: {type: Boolean, default: false}
+});
 
 module.exports = model('users', myschema);
