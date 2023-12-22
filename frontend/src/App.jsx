@@ -12,6 +12,7 @@ import ManageStudent from './components/admin/ManageStudent';
 import ResetPassword from './components/main/ResetPassword';
 import Admin from './components/admin';
 import ManageBadges from './components/admin/ManageBadges';
+import { SnackbarProvider } from 'notistack';
 
 function App() {
 

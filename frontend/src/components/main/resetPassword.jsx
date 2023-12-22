@@ -1,35 +1,42 @@
-import { Label } from '@headlessui/react/dist/components/label/label';
-import React from 'react'
+import React, { useRef } from 'react'
 
-const resetPassword = () => {
+const ResetPassword = () => {
 
-  const emilRef = useRef(null);
+const emailRef = useRef(null);
+const otpRef = useRef(null);
 
-  const sendOTP = async () => {
-    const res = await fetch('http://localhost:5000/user/sendotp', {
-      method: 'POST',
-      body: JSON.stringify({ email: emilRef.current.value }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
+const sendOPT = async () => {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/util/sendotp`, {
+        method: 'POST',
+        body: JSON.stringify({ email: emailRef.current.value }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
     });
 
     console.log(res.status);
-varifyOTP = async () => {
- 
-  }
+}
+
+const verifyOPT = async () => {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/util/verifyotp/${emailRef.current.value}/${otpRef.current.value}`);
+    console.log(res.status);
+    }
+
   return (
- 
     <div>
-      <h2>Reset your password</h2>
-      <label htmlFor="email" >Enter ragisterred Email </label>
-      
-      <input type="email" ref={emilRef} />
+        <h2>Reset Your Password</h2>
 
-      <button onClick={sendOTP}>Send OTP</button>
+        <label htmlfor="">Enter Registered Email</label>
+        <input type="text" ref={emailRef} />
 
-      </div>
+        <button onClick={sendOPT}>Send OTP </button>
+
+        <label htmlfor="">Enter OTP</label>
+        <input type="text" ref={otpRef} />
+
+        <button onClick={verifyOPT}> Verify OTP </button>
+    </div>
   )
 }
 
-export default resetPassword
+export default ResetPassword;
