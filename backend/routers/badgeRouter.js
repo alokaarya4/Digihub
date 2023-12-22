@@ -1,9 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Model = require('../models/userModel');
-const jwt = require('jsonwebtoken');
-const verifyingToken = require('./verifyingToken');
-require('dotenv').config();
+const Model = require('../models/badgeModel');
 
 
 router.post('/add', (req, res) => {
@@ -73,40 +70,4 @@ router.put('/update/:id', (req, res) => {
     });
 });
 
-
-router.post('/authenticate', (req, res) => {
-
-   
-    Model.findOne(req.body)
-    .then((result) => {
-
-        if(result){
-
-
-        const payload = { _id : result._id, email : result.email, role : result.role };
-
-        // create token
-        jwt.sign(
-            payload,
-            process.env.JWT_SECRET,
-            {expiresIn: '7 days'},
-            (err, token) => {
-                if(err) {
-                    console.log(err);
-                    res.status(500).json(err);
-
-                }
-                else res.status(200).json({token : token});
-            }
-        )
-
-        }
-
-      else res.status(401).json({status : 'login failed'})
-    })
-    .catch((err) => {
-        console.log(err);
-        res.status(500).json(err);
-    });
-});
 module.exports = router;

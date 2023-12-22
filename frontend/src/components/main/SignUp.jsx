@@ -1,4 +1,4 @@
-import { useFormik } from "formik";
+import { Formik, useFormik } from "formik";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -37,7 +37,7 @@ const Signup = () => {
           title : 'Signup Success!!',
           text: 'Now Login to Continue'
         });
-        navigate('/login');
+        navigate('/main/login');
       }else{
         Swal.fire({
           icon : 'error',
@@ -80,7 +80,7 @@ const Signup = () => {
             <h3 className="py-4 text-2xl text-center text-gray-800 dark:text-white">
               Sign In
             </h3>
-            <form className="px-8 pt-6 pb-8 mb-4 bg-white dark:bg-gray-800 rounded">
+            <form className="px-8 pt-6 pb-8 mb-4 bg-white dark:bg-gray-800 rounded" onSubmit={signupForm.handleSubmit}>
               <div className="mb-4 md:flex md:justify-between">
                 <div className="mb-4 md:mr-2 md:mb-0">
                   <label
@@ -91,25 +91,12 @@ const Signup = () => {
                   </label>
                   <input
                     className="w-full px-3 py-2 text-sm leading-tight text-gray-700 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                    id="firstName"
+                    id="name"
                     type="text"
-                    placeholder="First Name"
+                    placeholder="First Name"onChange={signupForm.handleChange} value={signupForm.values.name} 
                   />
                 </div>
-                <div className="md:ml-2">
-                  <label
-                    className="block mb-2 text-sm font-bold text-gray-700 dark:text-white"
-                    htmlFor="lastName"
-                  >
-                    Last Name
-                  </label>
-                  <input
-                    className="w-full px-3 py-2 text-sm leading-tight text-gray-700 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                    id="lastName"
-                    type="text"
-                    placeholder="Last Name"
-                  />
-                </div>
+                
               </div>
               <div className="mb-4">
                 <label
@@ -122,7 +109,7 @@ const Signup = () => {
                   className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                   id="email"
                   type="email"
-                  placeholder="Email"
+                  placeholder="Email"onChange={signupForm.handleChange} value={signupForm.values.email} 
                 />
               </div>
               <div className="mb-4 md:flex md:justify-between">
@@ -134,14 +121,14 @@ const Signup = () => {
                     Password
                   </label>
                   <input
-                    className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-white border border-red-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                    className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                     id="password"
                     type="password"
-                    placeholder="Your Password"
+                    placeholder="Your Password"onChange={signupForm.handleChange} value={signupForm.values.password} 
                   />
-                  <p className="text-xs italic text-red-500">
+                  {/* <p className="text-xs italic text-red-500">
                     Please choose a password.
-                  </p>
+                  </p> */}
                 </div>
                 <div className="md:ml-2">
                   <label
@@ -154,16 +141,16 @@ const Signup = () => {
                     className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                     id="c_password"
                     type="password"
-                    placeholder="Confirm Your Password"
+                    placeholder="Confirm Your Password"onChange={signupForm.handleChange} value={signupForm.values.password} 
                   />
                 </div>
               </div>
               <div className="mb-6 text-center">
                 <button
                   className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 dark:bg-blue-700 dark:text-white dark:hover:bg-blue-900 focus:outline-none focus:shadow-outline"
-                  type="button"
+                  type="submit"
                 >
-                  Sign In
+                  Sign Up
                 </button>
               </div>
               <hr className="mb-6 border-t" />
