@@ -57,20 +57,24 @@ const Signup = () => {
   };
 
   return (
-    
-    <form className="max-w-sm mx-auto" onSubmit={signupForm.handleSubmit}>
+    <div className="text-center mt-20 ">
+        <h1>Sign Up in Your Account</h1>
+   
+    <div className="card shadow-lg mx-80 rounded-5 mt-6 bg-transparent" >
+    <div className="card-body p-10">
+    <form className="card mt-10 w-auto max-w-sm mx-auto">
     <div className="mb-5">
       <label
         htmlFor="name"
         className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
       >
-        your name
+       Your Name
       </label>
       <input
         type="text"
         id="name"
         className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-        placeholder="name@flowbite.com"
+        placeholder="Enter Your Name"
         required=""
         onChange={signupForm.handleChange}
         value={signupForm.values.name}
@@ -81,11 +85,12 @@ const Signup = () => {
         htmlFor="email"
         className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
       >
-        Your
+       Email
       </label>
       <input
         type="email"
         id="email"
+        placeholder="Your Email"
         className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
         required=""
         onChange={signupForm.handleChange}
@@ -101,37 +106,26 @@ const Signup = () => {
       </label>
       <input
         type="password"
-        id="password"
+        id="repeat-password"
+        placeholder="Your Password"
         className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
         required=""
         onChange={signupForm.handleChange}
         value={signupForm.values.password}
       />
     </div>
-    <div className="flex items-start mb-5">
-      <div className="flex items-center h-5">
-        <input
-          id="terms"
-          type="checkbox"
-          defaultValue=""
-          className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
-          required=""
-        />
-      </div>
-      <label
-        htmlFor="terms"
-        className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-      >
-   
-      </label>
-    </div>
+
     <button
       type="submit"
       className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
     >
-      submit
+      Sign In
     </button>
   </form>
+  </div>
+  </div>
+  </div>
+
   
   );
 };

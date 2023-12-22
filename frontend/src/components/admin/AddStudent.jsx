@@ -27,9 +27,9 @@ const AddStudent = () => {
 
     <div class="grid gap-4 grid-cols-2 grid-rows-1">
 
-      <div className="card shadow-lg rounded-5 mt-6 bg-gray-200 ">
+      <div className="card shadow-lg rounded-md rounded-6 mt-8 bg-white ">
         <div className="card-body p-10">
-          <h1 className="text-center font-semibold">Add student</h1>
+          <h1 className="text-center font-extrabold ">Add student</h1>
           <form>
             <div className="relative z-0 w-50 mb-6 group">
 
@@ -163,7 +163,7 @@ const AddStudent = () => {
 
 
 
-      <div className="card shadow-lg rounded-5 mt-6 bg-gray-200 ">
+      <div className="card shadow-lg rounded-md mt-6 bg-purple-200 ">
         <div className="card-body p-10">
           <h1 className="text-center font-semibold"></h1>
 

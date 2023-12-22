@@ -73,11 +73,11 @@ import * as Yup from 'yup';
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <img
           className="mx-auto h-10 w-auto"
-          src=""
-          alt="Your Company"
+          src="1st.png"
+          alt="DigHub"
         />
         <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-          Sign in to your account
+          Log in to your account
         </h2>
       </div>
 
@@ -131,7 +131,7 @@ import * as Yup from 'yup';
               type="submit"
               className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
-              Sign in
+              Log in
             </button>
           </div>
         </form>

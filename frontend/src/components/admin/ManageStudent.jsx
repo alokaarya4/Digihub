@@ -36,12 +36,12 @@ const ManageStudent = () => {
     }
 
     const displayStudent = () => {
-        return <table className='table table-dark table-striped'>
+        return <table className=' space-x-4 table table-dark table-striped'>
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>Loaction</th>
+                    <th>Location</th>
                     <th>Photos</th>
                     <th></th>
                 </tr>
@@ -71,7 +71,7 @@ const ManageStudent = () => {
 
   return (
     <div>
-         <h1 className='text-center font-semibold'>Table</h1>
+         <h1 className='text-center font-extrabold'>Table</h1>
          <hr />
          <div className='container'>
             {displayStudent()}

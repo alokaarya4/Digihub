@@ -9,7 +9,9 @@ import AddBadge from './components/admin/AddBadge';
 import ManageUser from './components/admin/ManageUser';
 import Signup from './components/main/SignUp';
 import ManageStudent from './components/admin/ManageStudent';
-import { SnackbarProvider } from 'notistack';
+import ResetPassword from './components/main/ResetPassword';
+import Admin from './components/admin';
+import ManageBadges from './components/admin/ManageBadges';
 
 function App() {
 
@@ -25,9 +27,7 @@ function App() {
               <Route path='home' element={<Home />} />
               <Route path='login' element={<Login />} />
               <Route path='Signup' element={<Signup />} />
-              <Route path='Signup' element={<Signup />} />
-              <Route path='resetpassword' element={<resetpassword/>} />
-              
+              <Route path='ResetPassword' element={<ResetPassword />} />
             </Route>
             
 
@@ -36,14 +36,12 @@ function App() {
               <Route path='home' element={<Home />} />
             </Route>
 
-            <Route path='admin' element={<Main />}>
-              <Route path='home' element={<Home />} />
-              <Route path='login' element={<Login />} />
-              <Route path='Signup' element={<Signup />} />
+              <Route path='admin' element={<Admin />}>
               <Route path='addstudent' element={<AddStudent />} />
               <Route path='addbadge' element={<AddBadge />} />
               <Route path='manageuser' element={<ManageUser />} />
               <Route path='managestudent' element={<ManageStudent />} />
+              <Route path='managebadges' element={<ManageBadges />} />
             </Route>
 
 
