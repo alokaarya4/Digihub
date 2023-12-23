@@ -8,22 +8,22 @@ const ManageBadges = () => {
     <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
       <tr>
         <th scope="col" className="px-6 py-3">
-          ID
+          Student Name
         </th>
         <th scope="col" className="px-6 py-3">
-          NAME
+          Company Name
         </th>
         <th scope="col" className="px-6 py-3">
-          Badge ID
+          Email Address
         </th>
         <th scope="col" className="px-6 py-3">
-          Technology
+          Badge Id
         </th>
         <th scope="col" className="px-6 py-3">
-          file
+          Title
         </th>
         <th scope="col" className="px-6 py-3">
-          Edit
+          File 
         </th>
       </tr>
     </thead>

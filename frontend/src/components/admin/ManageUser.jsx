@@ -11,25 +11,68 @@ const fetchUserData = async()=> {
     const res=await fetch('http://localhost:5000/user/getall');
     console.log (res.status);
 
-    if(res.status===200){
-        const data =await res.json();
-        console.log(data);
-        setUserlist(data);
+    const fetchUserData = async () => {
+        const res = await fetch('http://localhost:5000/user/getall');
+
+        console.log(res.status);
+        if(res.status === 200){
+            const data = await res.json();
+            console.log(data);
+            setUserList(data);
+        }
+    };
+
+    useEffect(() => {
+      fetchUserData();
+    }, []);
+
+
+    const deleteUser = async (id) => {
+        console.log(id);
+        const res = await fetch('http://localhost:5173/AddStudent/delete/'+id, {method : 'DELETE'});
+        console.log(res.status);
+        if(res.status === 200){
+            fetchUserData();
+            toast.success('User Deleted Successfully 😁');
+        }
     }
 };
 
-useEffect(() =>{
-fetchUserData();
-}, []);
-
-const deleteuser = async(id) => {
-    console.log(id);
-    const res = await fetch('https//localhost:5000/user/delete/' +id, {method : 'DeLETE'});
-
-    if (res.status===200){
-        fetchUserData();
-
-        toast.success('user Deleted Successfully ')
+    const displayUser = () => {
+        return  <table className='table table-dark table-striped'>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Badge Id</th>
+                <th>Technology</th>
+                <th>File</th>
+                <th>Delete</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {
+                userlist.map((user) => (
+                    <tr>
+                        <td>{user._id}</td>
+                        <td>{user.name}</td>
+                        <td>{user.location}</td>
+                        <td>
+                            <img width={50} className='img-fluid' src={'http://localhost:5000/'+user.image} alt="" />
+                        </td>
+                        <td>
+                            <button className='btn btn-danger' onClick={() => { deleteUser(user._id) }}>Delete User</button>
+                        </td>
+                        <td>
+                            <button className='btn btn-primary' onClick={ () => { navigate('/updateuser/'+user._id) } }>Edit User</button>
+                        </td>
+                    </tr>
+                ))
+            }
+        </tbody>
+    </table>
+       
     }
 }
 
@@ -70,13 +113,38 @@ const displayUsers = () => {
 
   return (
     <div>
-        <h1 className='text-center'>Manage User data</h1>
-        <hr />
-        <div className='container'>
-            {displayUsers()}
-        </div>
-    </div>
+    <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+    {displayUser()}
+
+<table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+<thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+  <tr>
+    <th scope="col" className="px-6 py-3">
+      ID
+    </th>
+    <th scope="col" className="px-6 py-3">
+      NAME
+    </th>
+    <th scope="col" className="px-6 py-3">
+      Badge ID
+    </th>
+    <th scope="col" className="px-6 py-3">
+      Technology
+    </th>
+    <th scope="col" className="px-6 py-3">
+      file
+    </th>
+    <th scope="col" className="px-6 py-3">
+      Delete
+    </th>
+  </tr>
+</thead>
+
+</table>
+</div>
+
+</div>
   )
-}
+
 
 export default ManageUser
