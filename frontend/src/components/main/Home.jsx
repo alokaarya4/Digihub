@@ -1,6 +1,9 @@
 import React from 'react'
 
 const Home = () => {
+
+
+  
   return (
     <div>
 
@@ -15,7 +18,7 @@ const Home = () => {
       Students from partner universities sign up through the VIP form provided by HousingAnywhere to their university. Once they sign up, they immediately receive a verified student badge which qualifies them as reliable tenants. </p>
       
       <div className="space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
-        <button
+        <button 
           className="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-medium text-center text-gray-900 border border-gray-200  hover:text-blue-700 rounded-lg sm:w-auto hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
              Login here 
         </button>

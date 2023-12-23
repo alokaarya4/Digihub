@@ -78,8 +78,9 @@ const Signup = () => {
 
           <div className="w-full lg:w-7/12 bg-white dark:bg-gray-700 p-5 rounded-lg lg:rounded-l-none">
             <h3 className="py-4 text-2xl text-center text-gray-800 dark:text-white">
-              Sign In
+              Sign Up
             </h3>
+           
             <form className="px-8 pt-6 pb-8 mb-4 bg-white dark:bg-gray-800 rounded" onSubmit={signupForm.handleSubmit}>
               <div className="mb-4 md:flex md:justify-between">
                 <div className="mb-4 md:mr-2 md:mb-0">
@@ -96,8 +97,9 @@ const Signup = () => {
                     placeholder="First Name"onChange={signupForm.handleChange} value={signupForm.values.name} 
                   />
                 </div>
-                
               </div>
+              
+              
               <div className="mb-4">
                 <label
                   className="block mb-2 text-sm font-bold text-gray-700 dark:text-white"
@@ -112,6 +114,8 @@ const Signup = () => {
                   placeholder="Email"onChange={signupForm.handleChange} value={signupForm.values.email} 
                 />
               </div>
+             
+             
               <div className="mb-4 md:flex md:justify-between">
                 <div className="mb-4 md:mr-2 md:mb-0">
                   <label
@@ -126,25 +130,10 @@ const Signup = () => {
                     type="password"
                     placeholder="Your Password"onChange={signupForm.handleChange} value={signupForm.values.password} 
                   />
-                  {/* <p className="text-xs italic text-red-500">
-                    Please choose a password.
-                  </p> */}
-                </div>
-                <div className="md:ml-2">
-                  <label
-                    className="block mb-2 text-sm font-bold text-gray-700 dark:text-white"
-                    htmlFor="c_password"
-                  >
-                    Confirm Password
-                  </label>
-                  <input
-                    className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                    id="c_password"
-                    type="password"
-                    placeholder="Confirm Your Password"onChange={signupForm.handleChange} value={signupForm.values.password} 
-                  />
                 </div>
               </div>
+              
+              
               <div className="mb-6 text-center">
                 <button
                   className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 dark:bg-blue-700 dark:text-white dark:hover:bg-blue-900 focus:outline-none focus:shadow-outline"
