@@ -39,11 +39,21 @@ const ManageStudent = () => {
         return <table className=' space-x-4 table table-dark table-striped'>
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Location</th>
-                    <th>Photos</th>
-                    <th></th>
+                    <th scope="col" className="px-6 py-3">
+                    ID
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                    Name
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                    Location
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                    Photos
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+          Action
+        </th>
                 </tr>
             </thead>
             <tbody>
