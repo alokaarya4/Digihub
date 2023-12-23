@@ -17,6 +17,8 @@ import VerifyBadge from './components/main/VerifyBadge';
 import BrowserBadge from './components/main/BrowserBadge';
 import ViewBadge from './components/main/ViewBadge';
 
+import {SnackbarProvider} from 'notistack';
+
 function App() {
 
   return (
