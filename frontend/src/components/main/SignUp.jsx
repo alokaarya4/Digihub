@@ -48,19 +48,7 @@ const Signup = () => {
     }
   })
 
-  const uploadFile = async (e) => {
-    let file = e.target.files[0];
-    setSelImage(file.name);
-    const fd = new FormData();
-    fd.append('myfile', file);
-
-    const res = await fetch('http://localhost:5000/util/uploadfile', {
-      method: 'POST',
-      body: fd
-    });
-
-    console.log(res.status);
-  };
+  
 
   return (
     

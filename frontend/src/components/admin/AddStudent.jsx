@@ -1,6 +1,7 @@
 import { useFormik } from 'formik';
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const AddStudent = () => {
 
@@ -14,21 +15,54 @@ const AddStudent = () => {
           city: '',
           country: '',
           state: '',
-          pinCode: '',
-
-
-
-          
-
+          pinCode: '', 
    },
-      
+   onSubmit: async (values) => {
+    console.log(values);
+    console.log(import.meta.env.VITE_API_URL);
 
-      onSubmit: async (values) => {
+    const res = await fetch('http://localhost:5000/student/add', {
+      method: 'POST',
+      body: JSON.stringify(values),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
 
         console.log(values);
 
+        if(res.status === 200){
+          Swal.fire({
+            icon : 'success',
+            title : 'Add Successfully!!',
+            text: 'Now Add Your Student'
+          });
+          navigate('/admin/ManageStudent');
+        }else{
+          Swal.fire({
+            icon : 'error',
+            title : 'Oops!!',
+            text: 'Some Error Occured'
+          });
+        }
+  }
+})
 
-  }})
+const uploadFile = async (e) => {
+  let file = e.target.files[0];
+  setSelImage(file.name);
+  const fd = new FormData();
+  fd.append('myfile', file);
+
+  const res = await fetch('http://localhost:5000/util/uploadfile', {
+    method: 'POST',
+    body: fd
+  });
+
+  console.log(res.status);
+};
+
+
 
 
 
@@ -174,14 +208,6 @@ const AddStudent = () => {
     </form>
   </>
   
-
-
-
-
-
-
-
-
 
   )
 }

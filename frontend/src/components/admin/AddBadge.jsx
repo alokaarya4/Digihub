@@ -1,14 +1,10 @@
 import { useFormik } from 'formik';
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2';
 
 const AddBadge = () => {
-
-
-
   const navigate = useNavigate();
-
-
 
   const AddBadge = useFormik({
     initialValues: {
@@ -19,18 +15,12 @@ const AddBadge = () => {
       title: '',
       file: ''
     },
-       
-    
-    
-    
-    
-    
-    onSubmit: async (values) => {
-      // console.log(values);
-      // console.log(import.meta.env.VITE_API_URL);
+       onSubmit: async (values) => {
+      console.log(values);
+      console.log(import.meta.env.VITE_API_URL);
 
 
-      const res = await fetch('http://localhost:5000/badge/getall', {
+      const res = await fetch('http://localhost:5000/badge/add', {
         method: 'POST',
         body: JSON.stringify(values),
         headers: {
@@ -38,20 +28,40 @@ const AddBadge = () => {
         }
       });
 
+      console.log(res.status);
 
-      console.log(values);
-
+      if(res.status === 200){
+        Swal.fire({
+          icon : 'success',
+          title : 'Add Successfully!!',
+          text: 'Now Add Your Badge'
+        });
+        navigate('/admin/ManageBadges');
+      }else{
+        Swal.fire({
+          icon : 'error',
+          title : 'Oops!!',
+          text: 'Some Error Occured'
+        });
+      }
     }
-
-
-    
   })
+  const uploadFile = async (e) => {
+    let file = e.target.files[0];
+    setSelImage(file.name);
+    const fd = new FormData();
+    fd.append('myfile', file);
 
+    const res = await fetch('http://localhost:5000/util/uploadfile', {
+      method: 'POST',
+      body: fd
+    });
 
+    console.log(res.status);
+  };
 
-
+  
   return (
-
     <div className="grid grid-col-6 grid-flow-col   bg-purple-200 gap-8">
 
       <div className="  d-flex justify-content-center align-items-center vh-70">
@@ -191,11 +201,7 @@ const AddBadge = () => {
           <li>Discover new professional opportunities</li>
         </ul>
       </div>
-
     </div>
-
-
-
   )
 }
 
