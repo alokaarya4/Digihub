@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react'
-
 import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
 const ManageUser = () => {
 
+const navigate =useNavigate();
+    const[userlist, setUserlist] =useState([]);
 
-    const navigate = useNavigate();
-    const [userlist, setUserList] = useState([]);
+const fetchUserData = async()=> {
+    const res=await fetch('http://localhost:5000/user/getall');
+    console.log (res.status);
 
     const fetchUserData = async () => {
         const res = await fetch('http://localhost:5000/user/getall');
@@ -19,6 +21,7 @@ const ManageUser = () => {
             setUserList(data);
         }
     };
+}
 
     useEffect(() => {
       fetchUserData();
@@ -34,20 +37,46 @@ const ManageUser = () => {
             toast.success('User Deleted Successfully 😁');
         }
     }
-   
 
-    const displayUser = () => {
-        return  <table className=''>
-        
-       
-    </table>
-       
-    }
+
+const displayUsers = () => {
+    return <table className ='w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400'>
+
+        <thead className='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>email</th>
+                <th>password</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {
+                userlist.map((user) => (
+                    <tr>
+                        <td>{user._id}</td>
+                        <td>{user.name}</td>
+                        <td>{user.email}</td>
+                        <td>{user.password}</td>
+                        <td>
+                            <button className='bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'onClick={() =>{deleteuser(user._id)}}>Delete user</button>
+                        </td>
+                        <td>
+                            <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' onClick={()=> {navigate('/updateuser/'+user._id)}} > Edit User</button>
+                        </td>
+                    </tr>
+                )
+                )
+}
+        </tbody>
+        </table>
+}
 
   return (
     <div>
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-    {displayUser()}
+    {displayUsers()}
 
     <div>
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -108,6 +137,6 @@ const ManageUser = () => {
 
 </div>
   )
-}
 
-export default ManageUser;
+
+export default ManageUser

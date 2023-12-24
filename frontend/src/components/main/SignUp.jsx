@@ -1,7 +1,7 @@
 import { Formik, useFormik } from "formik";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
+// import Swal from "sweetalert2";
 
 const Signup = () => {
 
@@ -39,11 +39,7 @@ const Signup = () => {
         });
         navigate('/main/login');
       }else{
-        Swal.fire({
-          icon : 'error',
-          title : 'Oops!!',
-          text: 'Some Error Occured'
-        });
+        enqueueSnackbar('Something went wrong', { variant: 'error', anchorOrigin: { vertical: 'top', horizontal: 'center', }, });
       }
     }
   })

@@ -8,7 +8,6 @@ const cors = require('cors');
 const UserRouter = require('./routers/userRouter');
 const StudentRouter = require('./routers/studentRouter');
 const UtilRouter = require('./routers/util');
-const BadgeRouter = require('./routers/badgeRouter');
 
 app.use(cors({
     origin : ['http://localhost:5173'] 
@@ -17,7 +16,6 @@ app.use(express.json());
 
 app.use('/user', UserRouter);
 app.use('/student', StudentRouter);
-app.use('/badge', BadgeRouter); 
 app.use('/util', UtilRouter);
 
 app.use(express.static('./uploads'));

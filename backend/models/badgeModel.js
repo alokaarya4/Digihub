@@ -1,14 +1,12 @@
 const { model, Schema } = require ("../connection");
 
 const myschema = new Schema({
-     studentName: String,
-     companyName: String,
-     emailAddress: String,
-     badgeId: String,
      title: String,
-     image: {type: String, default: "file"},
+     technolodgy: String,
+     badgeID: String,
+     image: String, default: "",
      createdAt: Date,
-     
+     description: String
 })
 
 module.exports = model('badge', myschema);

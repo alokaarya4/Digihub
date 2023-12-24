@@ -17,10 +17,13 @@ import VerifyBadge from './components/main/VerifyBadge';
 import BrowserBadge from './components/main/BrowserBadge';
 import ViewBadge from './components/main/ViewBadge';
 
+import {SnackbarProvider} from 'notistack';
+
 function App() {
 
   return (
     <>
+    <SnackbarProvider maxSnack={3}>
       <BrowserRouter>
         <AppProvider>
           <Routes>
@@ -36,6 +39,7 @@ function App() {
               <Route path='browserbadge' element={<BrowserBadge />} />
               <Route path='viewbadge' element={<ViewBadge/>} />
             </Route>
+            
 
 
             <Route path='user' element={<Main />}>
@@ -54,6 +58,7 @@ function App() {
           </Routes>
         </AppProvider >
       </BrowserRouter>
+      </SnackbarProvider>
     </>
 
   )

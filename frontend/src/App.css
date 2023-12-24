@@ -1,0 +1,37 @@
+
+    .login{
+        .background--custom {
+            background-color: #FFFFFF;
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            top: 0;
+            left: 0;
+          }
+          @keyframes path0 {
+            0% {
+              transform: rotate(40deg);
+            }
+            100% {
+              transform: rotate(-40deg);
+            }
+          }
+          @keyframes path1 {
+            0% {
+              transform: rotate(0deg);
+            }
+            100% {
+              transform: rotate(0deg);
+            }
+          }
+          @keyframes path2 {
+            0% {
+              transform: rotate(-50deg);
+            }
+            100% {
+              transform: rotate(50deg);
+            }
+          }
+
+    }
