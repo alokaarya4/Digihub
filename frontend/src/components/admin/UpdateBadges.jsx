@@ -86,7 +86,6 @@ const UpdateBadges = () => {
                 className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
                 placeholder="Enter Badge Id"
               />
-             
             </div>
           </div>
           <div>
