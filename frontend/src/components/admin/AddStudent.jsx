@@ -5,10 +5,11 @@ import Swal from 'sweetalert2';
 
 const AddStudent = () => {
 
-  const Navigate = useNavigate(); 
+  const navigate = useNavigate(); 
 
   const AddStudent = useFormik({
       initialValues: {
+          registrationNumber: '',
           fullName: '',
           emailAddress: '',
           address: '',
@@ -73,7 +74,7 @@ const uploadFile = async (e) => {
     <div className="min-h-screen p-6 bg-gray-100 flex items-center justify-center">
       <div className="container max-w-screen-lg mx-auto">
         <div>
-          <h2 className="font-semibold text-xl my-6 text-gray-600">Add Student</h2>
+          <h2 className="font-semibold text-2xl text-center my-6  text-gray-600">Add Student</h2>
           <div className="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
             <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
               <div className="text-gray-600">
@@ -81,9 +82,20 @@ const uploadFile = async (e) => {
                 <p>Please fill out all the fields.</p>
               </div>
 
-              
+                             
               <div className="lg:col-span-2">
                 <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
+                <div className="md:col-span-2">
+                    <label htmlFor="city">Registration Number</label>
+                    <input
+                      type="text"
+                      name="registrationNumber"
+                      id="registrationNumber"
+                      className="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
+                      defaultValue=""
+                      placeholder="" onChange={AddStudent.handleChange} value={AddStudent.values.registrationNumber}
+                    />
+                  </div>
                   <div className="md:col-span-5">
                     <label htmlFor="full_name">Full Name</label>
                     <input
@@ -94,6 +106,7 @@ const uploadFile = async (e) => {
                       placeholder="" onChange={AddStudent.handleChange} value={AddStudent.values.fullName}
                     />
                   </div>
+                  
                   <div className="md:col-span-5">
                     <label htmlFor="email">Email Address</label>
                     <input
@@ -138,18 +151,8 @@ const uploadFile = async (e) => {
                         className="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent"
                         defaultValue="" onChange={AddStudent.handleChange} value={AddStudent.values.country}
                       />
-                      <button
-                        tabIndex={-1}
-                        className="cursor-pointer outline-none focus:outline-none transition-all text-gray-300 hover:text-red-600"
-                      >
-                      </button>
-                      
-                      <button
-                        tabIndex={-1}
-                        htmlFor="show_more"
-                        className="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-300 hover:text-blue-600"
-                      >
-                      </button>
+                    
+                     
                     </div>
                   </div>
                   <div className="md:col-span-2">
@@ -162,12 +165,7 @@ const uploadFile = async (e) => {
                         className="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent"
                         defaultValue=""  onChange={AddStudent.handleChange} value={AddStudent.values.state}
                       />
-                      <button
-                        tabIndex={-1}
-                        className="cursor-pointer outline-none focus:outline-none transition-all text-gray-300 hover:text-red-600"
-                      >
-                       
-                      </button>
+                     
                       <button
                         tabIndex={-1}
                         htmlFor="show_more"
@@ -178,11 +176,10 @@ const uploadFile = async (e) => {
                     </div>
                   </div>
                   <div className="md:col-span-1">
-                    <label htmlFor="pincode">Pincode</label>
+                    <label htmlFor="">Pincode</label>
                     <input
                       type="number"
-                      name="pincode"
-                      id="number"
+                      name="pinCode"
                       className="transition-all flex items-center h-10 border mt-1 rounded px-4 w-full bg-gray-50"
                       placeholder=""
                       defaultValue=""  onChange={AddStudent.handleChange} value={AddStudent.values.pinCode}
@@ -192,7 +189,7 @@ const uploadFile = async (e) => {
                  
                   <div className="md:col-span-5 mt-6 text-right">
                     <div className="inline-flex items-end">
-                      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                      <button className="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                         Submit
                       </button>
                     </div>

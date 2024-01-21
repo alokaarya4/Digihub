@@ -1,9 +1,9 @@
-const { model, Schema } = require ("../connection");
+const { model, Schema, Types } = require ("../connection");
 
 const myschema = new Schema({
-    badge:{type: types.ObjectId, ref: "Badge"},
-    student: {type: types.ObjectId, ref: "User"},
-    validaty:{type: types.ObjectId, ref: "Validaty"},
+    badge:{type: Types.ObjectId, ref: "badge"},
+    student: {type: Types.ObjectId, ref: "users"},
+    validaty:{type: String, default: "No Expiry"},
     issueDate: Date,
 
 })

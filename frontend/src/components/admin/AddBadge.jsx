@@ -1,21 +1,25 @@
 import { useFormik } from 'formik';
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2';
 
 const AddBadge = () => {
   const navigate = useNavigate();
 
+  const [selImage, setSelImage] = useState('');
+
   const AddBadge = useFormik({
     initialValues: {
-      studentName: '',
-      companyName: '',
-      emailAddress: '',
       badgeId: '',
       title: '',
-      file: ''
+      category: '',
+      description: '',
+      image: '',
+      createdAt: new Date()
     },
-       onSubmit: async (values) => {
+    onSubmit: async (values) => {
+      values.image = selImage;
+
       console.log(values);
       console.log(import.meta.env.VITE_API_URL);
 
@@ -28,31 +32,31 @@ const AddBadge = () => {
         }
       });
 
-      console.log(res.status);
+      console.log(values);
 
-      if(res.status === 200){
+      if (res.status === 200) {
         Swal.fire({
-          icon : 'success',
-          title : 'Add Successfully!!',
+          icon: 'success',
+          title: 'Add Successfully!!',
           text: 'Now Add Your Badge'
         });
         navigate('/admin/ManageBadges');
-      }else{
+      } else {
         Swal.fire({
-          icon : 'error',
-          title : 'Oops!!',
+          icon: 'error',
+          title: 'Oops!!',
           text: 'Some Error Occured'
         });
       }
     }
   })
-  const uploadFile = async (e) => {
+  const uploadfile = async (e) => {
     let file = e.target.files[0];
     setSelImage(file.name);
     const fd = new FormData();
     fd.append('myfile', file);
 
-    const res = await fetch('http://localhost:5000/util/uploadfile', {
+    const res = await fetch('http://localhost:5000/util/uploadfile/', {
       method: 'POST',
       body: fd
     });
@@ -60,7 +64,7 @@ const AddBadge = () => {
     console.log(res.status);
   };
 
-  
+
   return (
     <div className="grid grid-col-6 grid-flow-col   bg-purple-200 gap-8">
 
@@ -70,77 +74,29 @@ const AddBadge = () => {
           <div className="w-full max-w-xl p-10 bg-white border border-gray-200 rounded-lg shadow sm:p-10 md:p-8 dark:bg-gray-800 dark:border-gray-700 mx-10 my-10" >
 
 
-            <form className="space-y-6" action="#" onSubmit={AddBadge.handleSubmit}>
+            <form className="space-y-6" onSubmit={AddBadge.handleSubmit}>
               <h5 className="text-xl font-medium text-gray-900 dark:text-white text-center">
                 Add Badge Form
               </h5>
               <div>
                 <label
-                  htmlFor="email"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >
-                  Student Name
-                </label>
-                <input
-                  type="text"
-                  name="studentName"
-                  id="text"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                  placeholder="" onChange={AddBadge.handleChange} value={AddBadge.values.studentName}
-                  required=""
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >
-                  Company Name
-                </label>
-                <input
-                  type="text"
-                  name="companyName"
-                  id="text"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                  placeholder="" onChange={AddBadge.handleChange} value={AddBadge.values.companyName}
-                  required=""
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="password"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >
-                  Email Address
-                </label>
-                <input
-                  type="text"
-                  name="emailAddress"
-                  id="email"
-                  placeholder=""
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                  required="" onChange={AddBadge.handleChange} value={AddBadge.values.emailAddress}
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="password"
+                  htmlFor="badgeid"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Badge ID
                 </label>
                 <input
-                  type="number"
+                  type="text"
                   name="badgeId"
-                  id="number"
-                  placeholder=""
+                  id="badgeid"
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                  required="" onChange={AddBadge.handleChange} value={AddBadge.values.badgeId}
+                  placeholder="" onChange={AddBadge.handleChange} value={AddBadge.values.badgeId}
+                  required=""
                 />
               </div>
               <div>
                 <label
-                  htmlFor="password"
+                  htmlFor="title"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Title
@@ -148,26 +104,59 @@ const AddBadge = () => {
                 <input
                   type="text"
                   name="title"
-                  id="text"
-                  placeholder=""
+                  id="title"
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                  required="" onChange={AddBadge.handleChange} value={AddBadge.values.title}
+                  placeholder="" onChange={AddBadge.handleChange} value={AddBadge.values.title}
+                  required=""
                 />
               </div>
               <div>
                 <label
-                  htmlFor="password"
+                  htmlFor="category"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  Category
+                </label>
+                <input
+                  type="text"
+                  name="category"
+                  id="category"
+                  placeholder=""
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                  required="" onChange={AddBadge.handleChange} value={AddBadge.values.category}
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="description"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  Description
+                </label>
+                <input
+                  type="text"
+                  name="description"
+                  id="description"
+                  placeholder=""
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                  required="" onChange={AddBadge.handleChange} value={AddBadge.values.description}
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="file"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   File Upload
                 </label>
                 <input
                   type="file"
-                  name="avatar"
-                  id="text"
+                  onChange={uploadfile}
+
                   placeholder=""
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-52 p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                  required=""
+
                 />
               </div>
 
@@ -180,7 +169,7 @@ const AddBadge = () => {
               <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
                 Not registered?{" "}
                 <a href="#" className="text-blue-700 hover:underline dark:text-blue-500">
-                  Create account
+                  Create Account
                 </a>
               </div>
             </form>

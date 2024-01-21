@@ -5,20 +5,25 @@ const port = 5000;
 
 const cors = require('cors');
 
-const UserRouter = require('./routers/userRouter');
-const StudentRouter = require('./routers/studentRouter');
-const UtilRouter = require('./routers/util');
+const userRouter = require('./routers/userRouter');
+const studentRouter = require('./routers/studentRouter');
+const badgeRouter = require('./routers/badgeRouter');
+const utilRouter = require('./routers/util');
+const issueRouter = require('./routers/issueRouter');
+
 
 app.use(cors({
     origin : ['http://localhost:5173'] 
 }));
 app.use(express.json());
 
-app.use('/user', UserRouter);
-app.use('/student', StudentRouter);
-app.use('/util', UtilRouter);
+app.use('/user', userRouter);
+app.use('/student', studentRouter);
+app.use('/badge', badgeRouter);
+app.use('/issue', issueRouter);
+app.use('/util', utilRouter);
 
-app.use(express.static('./uploads'));
+app.use(express.static('./static/uploads'));
 
 app.get('/', (req, res) => {
     res.send('response from express server');

@@ -9,7 +9,9 @@ const myschema = new Schema({
     country: {type : String, require: true},
     state: {type : String, require: true},
     pinCode: {type : Number, require: true},
+    registrationNumber: {type : String, require: true},
     createdAt: Date
+
 })
 
-module.exports = model('students', myschema);
+module.exports = model('student', myschema);

@@ -1,12 +1,16 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
 
+   
+   
+  const navigate = useNavigate();
 
   
   return (
     <div>
-   {/* header */}
+ 
    
 
 <section className="bg-white dark:bg-gray-900">
@@ -21,13 +25,13 @@ const Home = () => {
       
       <div className="space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
         <button 
-          className="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-medium text-center text-gray-900 border border-gray-200  hover:text-blue-700 rounded-lg sm:w-auto hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+          className="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-medium text-center text-gray-900 border border-gray-200  hover:text-blue-700 rounded-lg sm:w-auto hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800" onClick={()=> {navigate('/main/Login/')}}>
              Login here 
         </button>
        
        
          <button
-          className="inline-flex items-center justify-center w-full px-5 py-3 mb-2 mr-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:w-auto focus:outline-none hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+          className="inline-flex items-center justify-center w-full px-5 py-3 mb-2 mr-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:w-auto focus:outline-none hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" onClick={()=> {navigate('/main/SignUp/')}}>
           Sign Up
         </button>
       </div>
@@ -104,10 +108,10 @@ const Home = () => {
           />
         </svg>
         <h3 className="mb-2 text-2xl font-bold dark:text-white">
-          99.99% uptime
+          99.99% Verify Badges
         </h3>
         <p className="font-light text-gray-500 dark:text-gray-400">
-          For Landwind, with zero maintenance downtime
+          Everyone got Badges from our DigiHub
         </p>
       </div>
       <div>
@@ -121,43 +125,11 @@ const Home = () => {
         </svg>
         <h3 className="mb-2 text-2xl font-bold dark:text-white">100+ Student</h3>
         <p className="font-light text-gray-500 dark:text-gray-400">
-          Trusted by over 600 milion users around the world
+          More and More Students Gets are Joining our DigiHub
         </p>
       </div>
-      <div>
-        <svg
-          className="w-10 h-10 mb-2 text-purple-600 md:w-12 md:h-12 dark:text-purple-500"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fillRule="evenodd"
-            d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z"
-            clipRule="evenodd"
-          />
-        </svg>
-        <h3 className="mb-2 text-2xl font-bold dark:text-white">
-          100+ countries
-        </h3>
-        <p className="font-light text-gray-500 dark:text-gray-400">
-          Have used Landwind to create functional websites
-        </p>
-      </div>
-      <div>
-        <svg
-          className="w-10 h-10 mb-2 text-purple-600 md:w-12 md:h-12 dark:text-purple-500"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-        </svg>
-        <h3 className="mb-2 text-2xl font-bold dark:text-white">5+ Million</h3>
-        <p className="font-light text-gray-500 dark:text-gray-400">
-          Transactions per day
-        </p>
-      </div>
+      
+      
     </div>
   </div>
 </section>
@@ -212,105 +184,10 @@ const Home = () => {
       </p>
     </div>
     <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
-      {/* Pricing Card */}
+      
       <div className="flex flex-col max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
-        <h3 className="mb-4 text-2xl font-semibold">Starter</h3>
-        <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-          Best option for personal use &amp; for your next project.
-        </p>
-        <div className="flex items-baseline justify-center my-8">
-          <span className="mr-2 text-5xl font-extrabold">$29</span>
-          <span className="text-gray-500 dark:text-gray-400">/month</span>
-        </div>
-        {/* List */}
-        <ul role="list" className="mb-8 space-y-4 text-left">
-          <li className="flex items-center space-x-3">
-            {/* Icon */}
-            <svg
-              className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clipRule="evenodd"
-              />
-            </svg>
-            <span>Individual configuration</span>
-          </li>
-          <li className="flex items-center space-x-3">
-            {/* Icon */}
-            <svg
-              className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clipRule="evenodd"
-              />
-            </svg>
-            <span>No setup, or hidden fees</span>
-          </li>
-          <li className="flex items-center space-x-3">
-            {/* Icon */}
-            <svg
-              className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clipRule="evenodd"
-              />
-            </svg>
-            <span>
-              Team size: <span className="font-semibold">1 developer</span>
-            </span>
-          </li>
-          <li className="flex items-center space-x-3">
-            {/* Icon */}
-            <svg
-              className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clipRule="evenodd"
-              />
-            </svg>
-            <span>
-              Premium support: <span className="font-semibold">6 months</span>
-            </span>
-          </li>
-          <li className="flex items-center space-x-3">
-            {/* Icon */}
-            <svg
-              className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clipRule="evenodd"
-              />
-            </svg>
-            <span>
-              Free updates: <span className="font-semibold">6 months</span>
-            </span>
-          </li>
-        </ul>
+        <img src="/dell2.png" alt="" />
+
         <a
           href="#"
           className="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900"
@@ -318,110 +195,10 @@ const Home = () => {
           Get started
         </a>
       </div>
-      {/* Pricing Card */}
+      
       <div className="flex flex-col max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
-        <h3 className="mb-4 text-2xl font-semibold">Company</h3>
-        <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-          Relevant for multiple users, extended &amp; premium support.
-        </p>
-        <div className="flex items-baseline justify-center my-8">
-          <span className="mr-2 text-5xl font-extrabold">$99</span>
-          <span
-            className="text-gray-500 dark:text-gray-400"
-            dark:text-gray-400=""
-          >
-            /month
-          </span>
-        </div>
-        {/* List */}
-        <ul role="list" className="mb-8 space-y-4 text-left">
-          <li className="flex items-center space-x-3">
-            {/* Icon */}
-            <svg
-              className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clipRule="evenodd"
-              />
-            </svg>
-            <span>Individual configuration</span>
-          </li>
-          <li className="flex items-center space-x-3">
-            {/* Icon */}
-            <svg
-              className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clipRule="evenodd"
-              />
-            </svg>
-            <span>No setup, or hidden fees</span>
-          </li>
-          <li className="flex items-center space-x-3">
-            {/* Icon */}
-            <svg
-              className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clipRule="evenodd"
-              />
-            </svg>
-            <span>
-              Team size: <span className="font-semibold">10 developers</span>
-            </span>
-          </li>
-          <li className="flex items-center space-x-3">
-            {/* Icon */}
-            <svg
-              className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clipRule="evenodd"
-              />
-            </svg>
-            <span>
-              Premium support: <span className="font-semibold">24 months</span>
-            </span>
-          </li>
-          <li className="flex items-center space-x-3">
-            {/* Icon */}
-            <svg
-              className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clipRule="evenodd"
-              />
-            </svg>
-            <span>
-              Free updates: <span className="font-semibold">24 months</span>
-            </span>
-          </li>
-        </ul>
+        
+        <img src="/dell2.png" alt="" />
         <a
           href="#"
           className="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900"
@@ -429,7 +206,7 @@ const Home = () => {
           Get started
         </a>
       </div>
-      {/* Pricing Card */}
+    
       <div className="flex flex-col max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
         <h3 className="mb-4 text-2xl font-semibold">Enterprise</h3>
         <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">

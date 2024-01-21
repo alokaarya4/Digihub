@@ -18,6 +18,9 @@ import BrowserBadge from './components/main/BrowserBadge';
 import ViewBadge from './components/main/ViewBadge';
 
 import {SnackbarProvider} from 'notistack';
+import UpdateStudent from './components/admin/UpdateStudent';
+import Dashboard from './components/admin/Dashboard';
+import UpdateBadges from './components/admin/UpdateBadges';
 
 function App() {
 
@@ -37,7 +40,7 @@ function App() {
               <Route path='Student' element={<Student />} />
               <Route path='verifybadge' element={<VerifyBadge />} />
               <Route path='browserbadge' element={<BrowserBadge />} />
-              <Route path='viewbadge' element={<ViewBadge/>} />
+              <Route path='viewbadge/:id' element={<ViewBadge/>} />
             </Route>
             
 
@@ -45,13 +48,17 @@ function App() {
             <Route path='user' element={<Main />}>
               <Route path='home' element={<Home />} />
             </Route>
+              
 
               <Route path='admin' element={<Admin />}>
               <Route path='addstudent' element={<AddStudent />} />
               <Route path='addbadge' element={<AddBadge />} />
               <Route path='manageuser' element={<ManageUser />} />
               <Route path='managestudent' element={<ManageStudent />} />
+              <Route path='updatestudent/:id' element={<UpdateStudent />} />
               <Route path='managebadges' element={<ManageBadges />} />
+              <Route path='updatebadges/:id' element={<UpdateBadges />} />
+              <Route path='dashboard' element={<Dashboard />} />
             </Route>
 
 

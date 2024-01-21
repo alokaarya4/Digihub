@@ -3,92 +3,70 @@ import React, { useEffect, useState } from 'react'
 import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
-const ManageBadge = () => {
+const ManageStudent = () => {
 
 
-    const navigate = useNavigate();
-    const [userlist, setUserList] = useState([]);
+ const navigate = useNavigate();
+  const [userlist, setUserList] = useState([]);
 
-    const fetchUserData = async () => {
-        const res = await fetch('http://localhost:5000/student/getall');
+  const fetchUserData = async () => {
+    const res = await fetch('http://localhost:5000/student/getall');
 
-        console.log(res.status);
-        if(res.status === 200){
-            const data = await res.json();
-            console.log(data);
-            setUserList(data);
-        }
-    };
+    console.log(res.status);
+    if (res.status === 200) {
+      const data = await res.json();
+      console.log(data);
+      setUserList(data);
+    }
+  };
 
-    useEffect(() => {
+  useEffect(() => {
+    fetchUserData();
+  }, []);
+
+
+  const deleteUser = async (id) => {
+    console.log(id);
+    const res = await fetch('http://localhost:5000/student/delete/' + id, { method: 'DELETE' });
+    console.log(res.status);
+    if (res.status === 200) {
       fetchUserData();
-    }, []);
-
-
-    const deleteUser = async (id) => {
-        console.log(id);
-        const res = await fetch('http://localhost:5000/student/delete/'+id, {method : 'DELETE'});
-        console.log(res.status);
-        if(res.status === 200){
-            fetchUserData();
-            toast.success('User Deleted Successfully 😁');
-        }
+      toast.success('User Deleted Successfully 😁');
     }
-   
+  }
 
-    const displayUser = () => {
-        return  <table className=''>
-        
-       
+
+  const displayUser = () => {
+    return <table>
+
+
     </table>
-       
-    }
 
-  return (
-    <div>
-    <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-    {displayUser()}
+  }
 
-    <div>
-        <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-  <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-    <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-      <tr className='space-x-8 justify-between '>
-        <th scope="col" className="px-6 py-3">
-         Full Name
-        </th>
-        <th scope="col" className="px-6 py-3 ">
-          Email Address
-        </th>
-        <th scope="col" className="px-6 py-3">
-          Address
-        </th>
-        <th scope="col" className="px-6 py-3">
-          City
-        </th>
-        <th scope="col" className="px-6 py-3">
-          Country
-        </th>
-        <th scope="col" className="px-6 py-3">
-          State
-        </th>
-        <th scope="col" className="px-6 py-3">
-          Pin Code
-        </th>
-        <th scope="col" className="px-6 py-3">
-          Delete
-        </th>
-        <th scope="col" className="px-6 py-3">
-          Edit
-        </th>
-  
-      </tr>
-    </thead>
-  </table>
-  <tbody>
+
+  const displayUsers = () => {
+    return <table className ='w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400'>
+
+        <thead className='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
+            <tr>
+                <th>Registration Number</th>
+                <th>Full Name</th>
+                <th>Email Address</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>Country</th>
+                <th>State</th>
+                <th>Pin Code</th>
+                <th className='px-7'>Delete</th>
+                <th className='px-7'>Edit</th>
+            </tr>
+        </thead>
+        <tbody className='bg-yellow-100'>
             {
                 userlist.map((user) => (
-                    <tr className='flex justify-between space-x-44'>
+                    <tr>
+                       <td>{user.registrationNumber}</td>
                         <td>{user.fullName}</td>
                         <td>{user.emailAddress}</td>
                         <td>{user.address}</td>
@@ -96,38 +74,31 @@ const ManageBadge = () => {
                         <td>{user.country}</td>
                         <td>{user.state}</td>
                         <td>{user.pinCode}</td>
-                        {/* <td>{user.location}</td> */}
-                        {/* <td>
-                            <img width={50} className='img-fluid' src={'http://localhost:5000/'+user.image} alt="" />
-                        </td> */}
                         <td>
-                            <button className='bg-orange-300' onClick={() => { deleteUser(user._id) }}>Delete User</button>
+                            <button className='bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' onClick={() => { deleteUser(user._id) }}>Delete user</button>
                         </td>
                         <td>
-                            <button className='bg-blue-300' onClick={ () => { navigate('/updateuser/'+user._id) } }>Edit User</button>
+                            <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' onClick={()=> {navigate('/admin/UpdateStudent/'+user._id)}} > Edit User</button>
                         </td>
                     </tr>
-                ))
-            }
+                )
+                )
+}
         </tbody>
-
-
-        
-          
-
-
-
-
-
-</div>
-
-    </div>
-
-
-</div>
-
-</div>
-  )
+        </table>
 }
 
-export default ManageBadge;
+  return (
+    <div>
+        <h1 className='text-center my-8  text-3xl'>Manage Student Data</h1>
+        <hr />
+        <div className='container'>
+            {displayUsers()}
+
+        </div>
+    </div>
+  )
+
+}
+
+export default ManageStudent;
