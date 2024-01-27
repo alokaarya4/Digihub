@@ -343,8 +343,8 @@ const UpdateStudent = () => {
                                     </div>
                                     <input
                                       type="text"
-                                      name="fullName"
-                                      id="fullName"
+                                      name="regritrationNumber"
+                                      id="regritrationNumber"
                                       className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
                                       placeholder="" onChange={updateUserForm.handleChange} value={updateUserForm.values.regritrationNumber}
                                     />
@@ -476,7 +476,8 @@ const UpdateStudent = () => {
                                   <button className="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">
                                     UPADTE NOW
                                   </button>
-                                  <button type="button" onClick={openModal} className="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">
+                            
+                                  <button type="button" onClick={openModal} className="block max-w-xs mx-auto my-4 bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">
                                     Issue Badge
                                   </button>
                                 </div>

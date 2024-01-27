@@ -65,14 +65,10 @@ const UpdateBadges = () => {
   return (
     <>
    
-    <section className="relative flex flex-wrap lg:h-screen lg:items-center">
+    <section className="relative flex bg-blue-100 flex-wrap lg:h-screen lg:items-center">
       <div className="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-lg text-center">
-          <h1 className="text-2xl font-bold sm:text-3xl">Get started today!</h1>
-          <p className="mt-4 text-gray-500">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et libero
-            nulla eaque error neque ipsa culpa autem, at itaque nostrum!
-          </p>
+          <h1 className="text-2xl font-bold sm:text-3xl">Badges Update Form</h1>
         </div>
         
         <form onSubmit={updateForm.handleSubmit} className="mx-auto mb-0 mt-8 max-w-md space-y-4">
@@ -83,8 +79,9 @@ const UpdateBadges = () => {
             <div className="relative">
               <input
                 type="text"
+                id="badgeId"
                 className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-                placeholder="Enter Badge Id"
+                placeholder="Enter Badge Id" onChange={updateForm.handleChange} value={updateForm.values.badgeId}
               />
             </div>
           </div>
@@ -95,8 +92,9 @@ const UpdateBadges = () => {
             <div className="relative">
               <input
                 type="text"
+                id="title"
                 className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-                placeholder="Enter Title "
+                placeholder="Enter Title " onChange={updateForm.handleChange} value={updateForm.values.title}
               />
              
             </div>
@@ -108,8 +106,9 @@ const UpdateBadges = () => {
             <div className="relative">
               <input
                 type="text"
+                id="category"
                 className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-                placeholder="Enter Category"
+                placeholder="Enter Category" onChange={updateForm.handleChange} value={updateForm.values.category}
               />
              
             </div>
@@ -121,8 +120,9 @@ const UpdateBadges = () => {
             <div className="relative">
               <input
                 type="text"
+                id="description"
                 className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-                placeholder="Enter Description"
+                placeholder="Enter Description" onChange={updateForm.handleChange} value={updateForm.values.description}
               />
              
             </div>
@@ -136,7 +136,6 @@ const UpdateBadges = () => {
                 </label>
                 <input
                   type="file"
-                  
                   placeholder="file"
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-52 p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
 
@@ -146,7 +145,7 @@ const UpdateBadges = () => {
           <div className="flex items-center justify-between">
            
             <button
-              type="submit"
+              type="update"
               className="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
             >
               Update 
@@ -154,7 +153,7 @@ const UpdateBadges = () => {
           </div>
         </form>
       </div>
-      <div className="relative h-64 w-full sm:h-96 lg:h-full lg:w-1/2">
+      <div className="relative  h-64 w-full sm:h-96 lg:h-full lg:w-1/2">
         <img
           alt="Welcome"
           src="https://images.unsplash.com/photo-1630450202872-e0829c9d6172?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"

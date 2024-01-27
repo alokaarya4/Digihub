@@ -62,6 +62,16 @@ router.get('/getbyemail/:email', (req, res) => {
     });
 });
 
+router.get('/getbyregistrationNumber/:registrationNumber', (req, res) => {
+    Model.find({ registrationNumber : req.params.registrationNumber })
+    .then((result) => {
+        res.json(result);
+    }).catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
 router.delete('/delete/:id', (req, res) => {
     Model.findByIdAndDelete(req.params.id)
     .then((result) => {

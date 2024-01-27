@@ -53,7 +53,7 @@ const IssueBadge = ({ studentData }) => {
             <div className="border border-gray-500">
                 <img className='card-img-top' src={"http://localhost:5000/" + badge.image} alt="" />
                 <div className="card-body">
-                    <button onClick={() => { issueBadge(badge._id) }}>Issue badge</button>
+                    <button className='bg-blue-400 hover:bg-blue-600 text-white w-full rounded-sm' onClick={() => { issueBadge(badge._id) }}>Issue Badge</button>
                 </div>
             </div>
         ))
@@ -65,7 +65,7 @@ const IssueBadge = ({ studentData }) => {
             <div className="border border-gray-500">
                 <img className='card-img-top' src={"http://localhost:5000/" + badge.image} alt="" />
                 <div className="card-body">
-                    <button onClick={() => { issueBadge(badge._id) }}>Issue Badge</button>
+                    <button className='bg-blue-400 hover:bg-blue-600 text-white w-full rounded-sm' onClick={() => { issueBadge(badge._id) }}>Issue Badge</button>
                 </div>
             </div>
         ))
@@ -73,15 +73,17 @@ const IssueBadge = ({ studentData }) => {
 
     return (
         <div className='p-5'>
-            <h2 className='text-center text-2xl font-bold'>Issue Badge to {studentData.fullName}</h2>
+            <h2 className='text-center mb-4 text-2xl font-bold'>Issue Badge to {studentData.fullName}</h2>
             <hr />
-            <h4 className='mt-4'>Available Badges</h4>
+            <h4 className='mt-4 font-bold text-2xl mb-4'>Available Badges</h4>
             <div className='grid grid-cols-6 gap-5'>
 
                 {displayBadges()}
             </div>
-            <h4 className='mt-4'>Issued Badges</h4>
+            
+            <h4 className='mt-4 font-bold mb-4 text-2xl'>Issued Badges</h4>
             <div className='grid grid-cols-6 gap-5'>
+                
 
                 {displayIssuedBadges()}
             </div>

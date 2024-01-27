@@ -90,7 +90,7 @@ const ManageStudent = () => {
 
   return (
     <div>
-        <h1 className='text-center my-8  text-3xl'>Manage Student Data</h1>
+        <h1 className='text-center my-8 font-bold text-4xl'>Manage Student Data</h1>
         <hr />
         <div className='container'>
             {displayUsers()}

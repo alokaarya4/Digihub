@@ -4,33 +4,37 @@ import { Link } from 'react-router-dom';
 const BrowserBadge = () => {
 
   const [badgeList, setBadgeList] = useState([]);
+  const [masterList, setMasterList] = useState([]);
+
 
   const fetchBadges = async () => {
     const res = await fetch('http://localhost:5000/badge/getall');
 
-        console.log(res.status);
-        if (res.status === 200) {
-            const data = await res.json();
-            console.log(data);
-            setBadgeList(data);
-        }
+    console.log(res.status);
+    if (res.status === 200) {
+      const data = await res.json();
+      console.log(data);
+      setBadgeList(data);
+      setMasterList(data);
+    }
   }
 
   useEffect(() => {
     fetchBadges();
   }, [])
-  
+
   const displayBadges = () => {
     return badgeList.map(badge => (
       <div className="relative flex flex-col shadow-md rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 max-w-sm">
-              <div className="h-auto overflow-hidden">
-                <div className="h-44 overflow-hidden relative">
-                  <img src={"http://localhost:5000/"+badge.image} alt="" />
-                  <h4>{badge.title}</h4>
-                  <Link to={"/main/viewbadge/"+badge._id}>View Details</Link>
-                </div>
-              </div>
-            </div>
+        <div className="h-auto overflow-hidden">
+          <div className="h-44 mb-2 overflow-hidden relative">
+            <img src={"http://localhost:5000/" + badge.image} alt="" />
+
+          </div>
+          <h4 className='mb-2 font-semibold'>{badge.title}</h4>
+          <Link to={"/main/viewbadge/" + badge._id} className='bg-blue-400 hover:bg-blue-600 rounded-sm text-white px-6'>View Details</Link>
+        </div>
+      </div>
     ))
   }
 
@@ -45,7 +49,7 @@ const BrowserBadge = () => {
             <input
               type="text"
               className="w-full bg-[#0d1829] flex bg-transparent pl-2 text-[#cccccc] outline-0"
-              placeholder="Broswe Badges Search Here"
+              placeholder="Broswe Badges Search Here" 
             />
             <button type="submit" className="relative p-2 bg-[#0d1829] rounded-full">
               <svg
@@ -83,10 +87,8 @@ const BrowserBadge = () => {
             Badges
           </h2>
 
-
           <div className="grid py-16 w-full sm:grid-cols-2 xl:grid-cols-4 gap-6">
-            
-          {displayBadges()}
+            {displayBadges()}
           </div>
         </div>
       </div>

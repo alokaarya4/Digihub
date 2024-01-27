@@ -3,8 +3,10 @@ import { useParams } from 'react-router-dom'
 
 const ViewBadge = () => {
 
-  const {id} = useParams();
+  const { id } = useParams();
   const [badgeData, setBadgeData] = useState(null);
+
+
 
   const fetchBadgeData = async () => {
     const res = await fetch("http://localhost:5000/badge/getbyid/" + id);
@@ -20,85 +22,55 @@ const ViewBadge = () => {
   }, [])
 
   const displayBadgeData = () => {
-    if(badgeData!==null){
+    if (badgeData !== null) {
       return (
-        <div></div>
+        <div className="mr-auto grid grid-cols-2 gap-4 place-self-center lg:col-span-7">
+         <h5>{badgeData.category}</h5>
+          <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+            {badgeData.description}
+          </p>
+
+          <div className="relative flex flex-col shadow-md rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 max-w-sm">
+            <div className="h-auto overflow-hidden">
+              <div className=" mb-2 overflow-hidden relative">
+                <img src={"http://localhost:5000/" + badgeData.image} alt="" />
+
+              </div>
+              <h4 className='mb-2 text-center text-2xl font-semibold'>{badgeData.title}</h4>
+            </div>
+          </div>
+        </div>
       )
     }
   }
-  
+
 
   return (
     <div>
-      <section className="bg-white dark:bg-gray-900">
-  <div className="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28">
-    <div className="mr-auto place-self-center lg:col-span-7">
-      <h1 className="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl dark:text-white">
-       View Badges<br />
-        Student &amp; Certification.
-      </h1>
-      <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-      Students from partner universities sign up through the VIP form provided by HousingAnywhere to their university. Once they sign up, they immediately receive a verified student badge which qualifies them as reliable tenants. </p>
-      
-    </div>
-   
-    <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
-      <img src="/AAAA.jpg" alt="computer image" className='rounded-md'/>
-    </div>
-  </div>
-</section>
-       
-       <>
-  <div className="flex flex-col bg-white m-auto p-auto">
-    <h1 className="flex py-5 lg:px-20 md:px-10 px-5 lg:mx-40 md:mx-20 mx-5 font-bold text-4xl text-gray-800">
-      View Badges
-    </h1>
-    <div className="flex py-10 overflow-x-scroll pb-10 hide-scroll-bar">
-      <div className="flex flex-nowrap lg:ml-40 md:ml-20 ml-10 ">
-        <div className="inline-block px-3">
-        <img className="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out" src="/dell.png" alt="" />
-        </div>
-       
-        <div className="inline-block px-3">
-        <img className="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out" src="/dell.png" alt="" />
-        </div>
-       
-          <div className="inline-block px-3">
-          <img className="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out" src="/dell.png" alt="" />
-        </div>
-       
-        <div className="inline-block px-3">
-        <img className="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out" src="/dell.png" alt="" />
-        </div>
-        
-        <div className="inline-block px-3">
-        <img className="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out" src="/dell.png" alt="" />
-        </div>
-        
-        <div className="inline-block px-3">
-        <img className="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out" src="/dell.png" alt="" />
-        </div>
-        
-        <div className="inline-block px-3">
-        <img className="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out" src="/dell.png" alt="" />
-        </div>
-        
-        <div className="inline-block px-3">
-        <img className="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out" src="/dell.png" alt="" />
-        </div>
+      <div>
+        <h1 className="text-center text-6xl font-bold pt-10 underline">
+          View Badges
+        </h1>
       </div>
-    </div>
-  </div>
-  <style
-    dangerouslySetInnerHTML={{
-      __html:
-        "\n.hide-scroll-bar {\n  -ms-overflow-style: none;\n  scrollbar-width: none;\n}\n.hide-scroll-bar::-webkit-scrollbar {\n  display: none;\n}\n"
-    }}
-  />
-</>
+
+      <section className="bg-white dark:bg-gray-900">
+        <div className="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28">
+
+          {/* <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
+      <img src="/AAAA.jpg" alt="computer image" className='rounded-md'/>
+    </div> */}
+          {displayBadgeData()}
+
+
+        </div>
+      </section>
+
+
+
 
     </div>
   )
 }
+
 
 export default ViewBadge

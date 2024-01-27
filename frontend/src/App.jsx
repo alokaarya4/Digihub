@@ -5,7 +5,6 @@ import Home from './components/main/Home';
 import Login from './components/main/login';
 import { AppProvider } from './context/AppContext';
 import AddStudent from './components/admin/AddStudent';
-import AddBadge from './components/admin/AddBadge';
 import ManageUser from './components/admin/ManageUser';
 import Signup from './components/main/SignUp';
 import ManageStudent from './components/admin/ManageStudent';
@@ -21,6 +20,7 @@ import {SnackbarProvider} from 'notistack';
 import UpdateStudent from './components/admin/UpdateStudent';
 import Dashboard from './components/admin/Dashboard';
 import UpdateBadges from './components/admin/UpdateBadges';
+import BadgeAdd from './components/admin/BadgeAdd';
 
 function App() {
 
@@ -52,7 +52,7 @@ function App() {
 
               <Route path='admin' element={<Admin />}>
               <Route path='addstudent' element={<AddStudent />} />
-              <Route path='addbadge' element={<AddBadge />} />
+              <Route path='badgeadd' element={<BadgeAdd />} />
               <Route path='manageuser' element={<ManageUser />} />
               <Route path='managestudent' element={<ManageStudent />} />
               <Route path='updatestudent/:id' element={<UpdateStudent />} />
