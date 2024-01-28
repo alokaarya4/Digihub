@@ -1,3 +1,4 @@
+import { enqueueSnackbar } from 'notistack';
 import React, { useEffect, useState } from 'react'
 
 const IssueBadge = ({ studentData }) => {
@@ -38,7 +39,10 @@ const IssueBadge = ({ studentData }) => {
         });
 
         console.log(res.status);
-
+        if (res.status === 200) {
+            enqueueSnackbar('Badge Issued Successfully', { variant: 'success' });
+            fetchIssuebadges();
+        }
         // alert on success
     }
 
@@ -53,6 +57,7 @@ const IssueBadge = ({ studentData }) => {
             <div className="border border-gray-500">
                 <img className='card-img-top' src={"http://localhost:5000/" + badge.image} alt="" />
                 <div className="card-body">
+                    <p>{badge.title}</p>
                     <button className='bg-blue-400 hover:bg-blue-600 text-white w-full rounded-sm' onClick={() => { issueBadge(badge._id) }}>Issue Badge</button>
                 </div>
             </div>
@@ -60,12 +65,13 @@ const IssueBadge = ({ studentData }) => {
     }
 
     const displayIssuedBadges = () => {
-        return issuedBadges.map((badge) => (
+        return issuedBadges.map(({badge, issueDate, validaty}) => (
 
             <div className="border border-gray-500">
                 <img className='card-img-top' src={"http://localhost:5000/" + badge.image} alt="" />
                 <div className="card-body">
-                    <button className='bg-blue-400 hover:bg-blue-600 text-white w-full rounded-sm' onClick={() => { issueBadge(badge._id) }}>Issue Badge</button>
+                    <h4>{badge.title}</h4>
+                    <p>Validity : {validaty}</p>
                 </div>
             </div>
         ))

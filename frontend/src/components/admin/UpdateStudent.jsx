@@ -95,9 +95,9 @@ const UpdateStudent = () => {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel className="w-full max-w-5xl transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                  
-                <IssueBadge studentData={userData} />
-                 
+
+                  <IssueBadge studentData={userData} />
+
                 </Dialog.Panel>
               </Transition.Child>
             </div>
@@ -119,8 +119,8 @@ const UpdateStudent = () => {
             <Formik initialValues={userData} onSubmit={formSubmit}>
               {(updateUserForm) => {
                 return (
-                 
-                 <form onSubmit={updateUserForm.handleSubmit}>
+
+                  <form onSubmit={updateUserForm.handleSubmit}>
                     <div className="min-w-screen min-h-screen bg-gray-900 flex items-center justify-center px-5 py-5">
                       <div
                         className="bg-gray-100 text-gray-500 rounded-3xl shadow-xl w-full overflow-hidden"
@@ -476,7 +476,7 @@ const UpdateStudent = () => {
                                   <button className="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">
                                     UPADTE NOW
                                   </button>
-                            
+
                                   <button type="button" onClick={openModal} className="block max-w-xs mx-auto my-4 bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">
                                     Issue Badge
                                   </button>

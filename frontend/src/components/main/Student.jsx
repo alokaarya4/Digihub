@@ -36,12 +36,31 @@ const Student = () => {
     }
   }
 
+  const displayBadges = () => {
+    return issuedBadges.map((badge) => (
+
+      <div className="border border-gray-500" key={badge._id}>
+        <img className='card-img-top' src={"http://localhost:5000/" + badge.badge.image} alt="" />
+        <div className="card-body">
+          <button className='bg-blue-400 hover:bg-blue-600 text-white w-full rounded-sm'>View Badge</button>
+        </div>
+      </div>
+    ))
+  }
+
   const displayStudentData = () => {
     if (studentData !== null) {
+      return <div className="mr-auto grid grid-cols-2 gap-4 place-self-center lg:col-span-7">
+        <h1>Name : {studentData.fullName}</h1>
 
+        <h1>Registration Number : {studentData.registrationNumber}</h1>
+
+        {displayBadges()}
+      </div>
     } else {
-      return <h1>Loading ...</h1>
+      return <h1 className='text-white pt-2'>Loading...</h1>
     }
+
   }
 
   return (
@@ -87,9 +106,12 @@ const Student = () => {
                 </g>
               </svg>
             </button>
+
           </div>
         </div>
+        {displayStudentData()}
       </div>
+
     </>
   )
 }

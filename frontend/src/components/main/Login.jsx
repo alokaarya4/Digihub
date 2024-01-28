@@ -44,9 +44,14 @@ const Login = () => {
         });
 
         const data = await res.json();
-        sessionStorage.setItem('user', JSON.stringify(data));
+        if(data.role !== 'admin'){
+          sessionStorage.setItem('admin', JSON.stringify(data));
+          navigate('/admin/addstudent');
+        }else{
+          sessionStorage.setItem('user', JSON.stringify(data));
+          navigate('/main/browse');
+        }
         setLoggedIn(true);
-        navigate('/admin/addstudent');
 
       } else if (res.status === 401) {
         Swal.fire({

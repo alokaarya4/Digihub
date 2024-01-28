@@ -146,7 +146,7 @@ const UpdateBadges = () => {
            
             <button
               type="update"
-              className="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
+              className="inline-block hover:bg-blue-800 duration-300 rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
             >
               Update 
             </button>

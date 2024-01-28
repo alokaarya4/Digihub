@@ -1,10 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+import { Navigation } from 'swiper/modules';
 
 const BrowserBadge = () => {
 
   const [badgeList, setBadgeList] = useState([]);
   const [masterList, setMasterList] = useState([]);
+
+  const browseRef = useRef(null);
 
 
   const fetchBadges = async () => {
@@ -27,7 +37,7 @@ const BrowserBadge = () => {
     return badgeList.map(badge => (
       <div className="relative flex flex-col shadow-md rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 max-w-sm">
         <div className="h-auto overflow-hidden">
-          <div className="h-44 mb-2 overflow-hidden relative">
+          <div className="h-auto mb-4 overflow-hidden relative">
             <img src={"http://localhost:5000/" + badge.image} alt="" />
 
           </div>
@@ -40,7 +50,17 @@ const BrowserBadge = () => {
 
   return (
     <div>
-
+        <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+        <SwiperSlide>Slide 1</SwiperSlide>
+        <SwiperSlide>Slide 2</SwiperSlide>
+        <SwiperSlide>Slide 3</SwiperSlide>
+        <SwiperSlide>Slide 4</SwiperSlide>
+        <SwiperSlide>Slide 5</SwiperSlide>
+        <SwiperSlide>Slide 6</SwiperSlide>
+        <SwiperSlide>Slide 7</SwiperSlide>
+        <SwiperSlide>Slide 8</SwiperSlide>
+        <SwiperSlide>Slide 9</SwiperSlide>
+      </Swiper>
       <>
         <div className="flex items-center justify-center h-72 bg-[#00e4de]">
           <div className="flex rounded-full bg-[#0d1829] px-2 w-full max-w-[600px]">
@@ -48,8 +68,9 @@ const BrowserBadge = () => {
             </button>
             <input
               type="text"
+              ref={browseRef}
               className="w-full bg-[#0d1829] flex bg-transparent pl-2 text-[#cccccc] outline-0"
-              placeholder="Broswe Badges Search Here" 
+              placeholder="Broswe Badges Search Here"
             />
             <button type="submit" className="relative p-2 bg-[#0d1829] rounded-full">
               <svg

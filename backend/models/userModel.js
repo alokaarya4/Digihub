@@ -5,7 +5,7 @@ const myschema = new Schema({
     name: {type: String, required: true},   
     password: {type: String, required: true},   
     avatar: {type: String, default: ""},
-    role: {type: String, default: "admin"},
+    role: {type: String, default: "user"},
     createdAt: Date,
     emailVerified: {type: Boolean, default: false},
 });
