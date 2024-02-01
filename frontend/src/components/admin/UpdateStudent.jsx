@@ -1,7 +1,7 @@
 import { Formik, useFormik } from "formik";
 import React, { Fragment, useEffect } from "react";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import { Dialog, Transition } from '@headlessui/react'
 import IssueBadge from "./IssueBadge";
@@ -9,7 +9,7 @@ import IssueBadge from "./IssueBadge";
 const UpdateStudent = () => {
 
 
-
+  const navigate = useNavigate();
   const { id } = useParams();
 
   const [userData, setUserData] = useState(null);
@@ -57,7 +57,6 @@ const UpdateStudent = () => {
         title: 'Update Success!!',
         text: 'Student Updated successfully'
       });
-
     } else {
       Swal.fire({
         icon: 'error',
@@ -331,6 +330,9 @@ const UpdateStudent = () => {
                             <div className="text-center mb-10">
                               <h1 className="font-bold text-3xl text-gray-900">Update Student Form</h1>
                               <p>Enter your information to update</p>
+                              <button type="button" onClick={openModal} className="block max-w-xs mx-auto my-3  bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-2 font-semibold">
+                                    Issue Badge
+                                  </button>
                             </div>
                             <div>
                               <div className="flex -mx-3">
@@ -345,7 +347,7 @@ const UpdateStudent = () => {
                                       type="text"
                                       name="regritrationNumber"
                                       id="regritrationNumber"
-                                      className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                                      className="w-full -ml-10 pl-4 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
                                       placeholder="" onChange={updateUserForm.handleChange} value={updateUserForm.values.regritrationNumber}
                                     />
                                   </div>
@@ -364,7 +366,7 @@ const UpdateStudent = () => {
                                       type="text"
                                       name="fullName"
                                       id="fullName"
-                                      className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                                      className="w-full -ml-10 pl-4 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
                                       placeholder="" onChange={updateUserForm.handleChange} value={updateUserForm.values.fullName}
                                     />
                                   </div>
@@ -382,7 +384,7 @@ const UpdateStudent = () => {
                                     <input
                                       type="text"
                                       id="emailAddress"
-                                      className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                                      className="w-full -ml-10 pl-4 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
                                       placeholder="" onChange={updateUserForm.handleChange} value={updateUserForm.values.emailAddress}
                                     />
                                   </div>
@@ -399,7 +401,7 @@ const UpdateStudent = () => {
                                     <input
                                       type="text"
                                       id="address"
-                                      className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                                      className="w-full -ml-10 pl-4 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
                                       placeholder="" onChange={updateUserForm.handleChange} value={updateUserForm.values.address}
                                     />
                                   </div>
@@ -416,7 +418,7 @@ const UpdateStudent = () => {
                                     <input
                                       type="text"
                                       id="city"
-                                      className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                                      className="w-full -ml-10 pl-4 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
                                       placeholder="" onChange={updateUserForm.handleChange} value={updateUserForm.values.city}
                                     />
                                   </div>
@@ -431,7 +433,7 @@ const UpdateStudent = () => {
                                     <input
                                       type="text"
                                       id="country"
-                                      className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                                      className="w-full -ml-10 pl-4 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
                                       placeholder="" onChange={updateUserForm.handleChange} value={updateUserForm.values.country}
                                     />
                                   </div>
@@ -449,7 +451,7 @@ const UpdateStudent = () => {
                                     <input
                                       type="text"
                                       id="state"
-                                      className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                                      className="w-full -ml-10 pl-2 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
                                       placeholder="" onChange={updateUserForm.handleChange} value={updateUserForm.values.state}
                                     />
                                   </div>
@@ -464,12 +466,29 @@ const UpdateStudent = () => {
                                     <input
                                       type="number"
                                       id="pinCode"
-                                      className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                                      className="w-full -ml-10 pl-2 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
                                       placeholder="" onChange={updateUserForm.handleChange} value={updateUserForm.values.pinCode}
                                     />
                                   </div>
                                 </div>
+                                <div className="w-1/2 px-3 mb-5">
+                                  <label htmlFor="" className="text-xs font-semibold px-1">
+                                   Mobile Number
+                                  </label>
+                                  <div className="flex">
+                                    <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
+                                    </div>
+                                    <input
+                                      type="number"
+                                      id="mobileNumber"
+                                      className="w-full -ml-10 pl-2 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                                      placeholder="" onChange={updateUserForm.handleChange} value={updateUserForm.values.mobileNumber}
+                                    />
+                                  </div>
+                                </div>
                               </div>
+
+                              
 
                               <div className="flex -mx-3">
                                 <div className="w-full px-3 mb-5">
@@ -477,9 +496,7 @@ const UpdateStudent = () => {
                                     UPADTE NOW
                                   </button>
 
-                                  <button type="button" onClick={openModal} className="block max-w-xs mx-auto my-4 bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">
-                                    Issue Badge
-                                  </button>
+                                  
                                 </div>
                               </div>
                             </div>

@@ -21,7 +21,7 @@ const Home = () => {
         Student &amp; Certification.
       </h1>
       <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-      Students from partner universities sign up through the VIP form provided by HousingAnywhere to their university. Once they sign up, they immediately receive a verified student badge which qualifies them as reliable tenants. </p>
+      Students from partner Institute & Collages sign up through the DigiHub to their Institute & Collages. Once they sign up, they immediately receive a Verified Student Badge which qualifies them as reliable Students. </p>
       
       <div className="space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
         <button 
@@ -43,26 +43,26 @@ const Home = () => {
   </div>
 </section>
 
-<section className=" bg-green-200">
+<section className="bg-purple-100">
   <div className="max-w-screen-xl px-4 pb-8 mx-auto lg:pb-16">
     <div className="grid grid-cols-2 gap-8 text-gray-500 sm:gap-12 sm:grid-cols-3 lg:grid-cols-6 dark:text-gray-400">
       <a href="#" className="flex items-center lg:justify-center">
-        <img src="/JC NEW.png" />
+        <img src="/MERN-logo.png" onClick={()=> {navigate('/main/viewbadges/')}}/>
       </a>
       <a href="#" className="flex items-center lg:justify-center">
-        <img src="/google.png" />
+        <img src="/pythonlogo1.png" className='m-4'/>
       </a>
       <a href="#" className="flex items-center lg:justify-center">
-        <img src="/AWS NEW.png" />
+        <img src="/kotlin.png" />
       </a>
       <a href="#" className="flex items-center lg:justify-center">
-        <img src="/ADOBE.png" />
+        <img src="/React-logo1.png" />
       </a>
       <a href="#" className="flex items-center lg:justify-center">
-        <img src="/IBM NEW.png" />        
+        <img src="/Angular1.png" />        
      </a>
       <a href="#" className="bg-auto">
-         <img src="/dell.png" alt="computer image" />
+         <img src="/JavaScript-logo.png" className='mt-4' />
         </a>
     </div>
   </div>
@@ -150,24 +150,9 @@ const Home = () => {
       </svg>
       <blockquote>
         <p className="text-xl font-medium text-gray-900 md:text-2xl dark:text-white">
-        How have we suddenly generated so much dramatic increase in the visibility of our program? It’s all been driven by badging through Credly’s Acclaim platform.
+        Badges mean nothing in themselves, but they mark a certain achievement and they are a link between the rich and the poor.
         </p>
       </blockquote>
-      <figcaption className="flex items-center justify-center mt-6 space-x-3">
-        <img
-          className="w-6 h-6 rounded-full"
-          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png"
-          alt="profile picture"
-        />
-        <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-          <div className="pr-3 font-medium text-gray-900 dark:text-white">
-            Micheal Gough
-          </div>
-          <div className="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">
-            CEO at Google
-          </div>
-        </div>
-      </figcaption>
     </figure>
   </div>
 </section>
@@ -186,31 +171,9 @@ const Home = () => {
     <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
       
       <div className="flex flex-col max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
-        <img src="/dell2.png" alt="" />
-
-        <a
-          href="#"
-          className="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900"
-        >
-          Get started
-        </a>
-      </div>
-      
-      <div className="flex flex-col max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
-        
-        <img src="/dell2.png" alt="" />
-        <a
-          href="#"
-          className="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900"
-        >
-          Get started
-        </a>
-      </div>
-    
-      <div className="flex flex-col max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
-        <h3 className="mb-4 text-2xl font-semibold">Enterprise</h3>
-        <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-          Best for large scale uses and extended redistribution rights.
+        <h3 className="mb-4 text-6xl font-semibold">Kotlin</h3>
+        <p className="font-semilight text-gray-500 sm:text-lg dark:text-gray-400">
+        Kotlin for App Development
         </p>
         <div className="flex items-baseline justify-center my-8">
           <span className="mr-2 text-5xl font-extrabold">$499</span>
@@ -232,7 +195,7 @@ const Home = () => {
                 clipRule="evenodd"
               />
             </svg>
-            <span>Individual configuration</span>
+            <span>Only available at digipodium.</span>
           </li>
           <li className="flex items-center space-x-3">
             {/* Icon */}
@@ -248,7 +211,7 @@ const Home = () => {
                 clipRule="evenodd"
               />
             </svg>
-            <span>No setup, or hidden fees</span>
+            <span>Less boilerplate code</span>
           </li>
           <li className="flex items-center space-x-3">
             {/* Icon */}
@@ -265,7 +228,7 @@ const Home = () => {
               />
             </svg>
             <span>
-              Team size: <span className="font-semibold">100+ developers</span>
+              Our Students : <span className="font-semibold">100+ developers</span>
             </span>
           </li>
           <li className="flex items-center space-x-3">
@@ -283,7 +246,7 @@ const Home = () => {
               />
             </svg>
             <span>
-              Premium support: <span className="font-semibold">36 months</span>
+            Realtime Cloud services Firebase
             </span>
           </li>
           <li className="flex items-center space-x-3">
@@ -301,7 +264,7 @@ const Home = () => {
               />
             </svg>
             <span>
-              Free updates: <span className="font-semibold">36 months</span>
+            Data classes ,Sealed Classes, etc.
             </span>
           </li>
         </ul>
@@ -312,6 +275,217 @@ const Home = () => {
           Get started
         </a>
       </div>
+      <div className="flex flex-col max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+        <h3 className="mb-4 text-6xl font-semibold">Python</h3>
+        <p className="font-semilight text-gray-500 sm:text-lg dark:text-gray-400">
+        Python for Data Science
+        </p>
+        <div className="flex items-baseline justify-center my-8">
+          <span className="mr-2 text-5xl font-extrabold">$499</span>
+          <span className="text-gray-500 dark:text-gray-400">/month</span>
+        </div>
+        {/* List */}
+        <ul role="list" className="mb-8 space-y-4 text-left">
+          <li className="flex items-center space-x-3">
+            {/* Icon */}
+            <svg
+              className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <span>Only available at digipodium.</span>
+          </li>
+          <li className="flex items-center space-x-3">
+            {/* Icon */}
+            <svg
+              className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <span>Use popular python libraries</span>
+          </li>
+          <li className="flex items-center space-x-3">
+            {/* Icon */}
+            <svg
+              className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <span>
+              Our Students : <span className="font-semibold">200+ Programmers</span>
+            </span>
+          </li>
+          <li className="flex items-center space-x-3">
+            {/* Icon */}
+            <svg
+              className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <span>
+            Create autonomous web crawlers
+            </span>
+          </li>
+          <li className="flex items-center space-x-3">
+            {/* Icon */}
+            <svg
+              className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <span>
+            Cool data science projects
+            </span>
+          </li>
+        </ul>
+        <a
+          href="#"
+          className="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900"
+        >
+          Get started
+        </a>
+      </div>
+      <div className="flex flex-col max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+        <h3 className="mb-4 text-6xl font-semibold">MEAN</h3>
+        <p className="font-semilight text-gray-500 sm:text-lg dark:text-gray-400">
+        MEAN Stack Developer 
+        </p>
+        <div className="flex items-baseline justify-center my-8">
+          <span className="mr-2 text-5xl font-extrabold">$499</span>
+          <span className="text-gray-500 dark:text-gray-400">/month</span>
+        </div>
+        {/* List */}
+        <ul role="list" className="mb-8 space-y-4 text-left">
+          <li className="flex items-center space-x-3">
+            {/* Icon */}
+            <svg
+              className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <span>Only available at digipodium.</span>
+          </li>
+          <li className="flex items-center space-x-3">
+            {/* Icon */}
+            <svg
+              className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <span>Learn to use Github</span>
+          </li>
+          <li className="flex items-center space-x-3">
+            {/* Icon */}
+            <svg
+              className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <span>
+              Our Students : <span className="font-semibold">300+ developers</span>
+            </span>
+          </li>
+          <li className="flex items-center space-x-3">
+            {/* Icon */}
+            <svg
+              className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <span>
+            Using New Context API
+            </span>
+          </li>
+          <li className="flex items-center space-x-3">
+            {/* Icon */}
+            <svg
+              className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <span>
+            Free Project Hosting
+            </span>
+          </li>
+        </ul>
+        <a
+          href="#"
+          className="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900"
+        >
+          Get started
+        </a>
+      </div>
+
     </div>
   </div>
 </section>

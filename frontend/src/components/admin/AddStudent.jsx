@@ -17,6 +17,7 @@ const AddStudent = () => {
           country: '',
           state: '',
           pinCode: '', 
+          mobileNumber: ''
    },
    onSubmit: async (values) => {
     console.log(values);
@@ -186,6 +187,22 @@ const uploadFile = async (e) => {
                       placeholder=""
                       defaultValue=""  onChange={AddStudent.handleChange} value={AddStudent.values.pinCode}
                     />
+                  </div>
+
+                  <div className="md:col-span-2">
+                    <label className='font-semibold'>Mobile Number</label>
+                    <div className="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
+                      <input
+                        type='number'
+                        name="mobileNumber"
+                        id="mobileNumber"
+                        placeholder=""
+                        className="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent"
+                        defaultValue="" onChange={AddStudent.handleChange} value={AddStudent.values.mobileNumber}
+                      />
+                    
+                     
+                    </div>
                   </div>
                  
                  

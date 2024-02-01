@@ -9,6 +9,7 @@ const myschema = new Schema({
     country: {type : String, require: true},
     state: {type : String, require: true},
     pinCode: {type : Number, require: true},
+    mobileNumber: {type : Number, require: true},
     registrationNumber: {type : String, require: true},
     createdAt: Date
 

@@ -24,22 +24,23 @@ const ViewBadge = () => {
   const displayBadgeData = () => {
     if (badgeData !== null) {
       return (
-        <div className="mr-auto grid grid-cols-2 gap-4 place-self-center lg:col-span-7">
-         <h5>{badgeData.category}</h5>
-          <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-            {badgeData.description}
-          </p>
-
+        
+        <div className="mr-auto  text-center grid text-3xl grid-cols-2 gap-20 place-self-center lg:col-span-7">
           <div className="relative flex flex-col shadow-md rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 max-w-sm">
             <div className="h-auto overflow-hidden">
-              <div className=" mb-2 overflow-hidden relative">
+              <div className="mb-2 overflow-hidden  relative">
                 <img src={"http://localhost:5000/" + badgeData.image} alt="" />
-
               </div>
               <h4 className='mb-2 text-center text-2xl font-semibold'>{badgeData.title}</h4>
             </div>
           </div>
+          <h5 className='ml-auto font-bold'> . {badgeData.category}
+          <p className="mt-12 text-gray-600 font-semibold lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+            {badgeData.description}
+          </p>
+          </h5>
         </div>
+      
       )
     }
   }

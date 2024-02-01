@@ -2,7 +2,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import './App.css'
 import Main from './components/main';
 import Home from './components/main/Home';
-import Login from './components/main/login';
+import Login from './components/main/Login';
 import { AppProvider } from './context/AppContext';
 import AddStudent from './components/admin/AddStudent';
 import ManageUser from './components/admin/ManageUser';

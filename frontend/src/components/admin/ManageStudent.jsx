@@ -58,6 +58,7 @@ const ManageStudent = () => {
                 <th>Country</th>
                 <th>State</th>
                 <th>Pin Code</th>
+                <th>Mobile Number</th>
                 <th className='px-7'>Delete</th>
                 <th className='px-7'>Edit</th>
             </tr>
@@ -74,6 +75,7 @@ const ManageStudent = () => {
                         <td>{user.country}</td>
                         <td>{user.state}</td>
                         <td>{user.pinCode}</td>
+                        <td>{user.mobileNumber}</td>
                         <td>
                             <button className='bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' onClick={() => { deleteUser(user._id) }}>Delete user</button>
                         </td>

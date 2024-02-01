@@ -35,21 +35,21 @@ const BrowserBadge = () => {
 
   const displayBadges = () => {
     return badgeList.map(badge => (
-      <div className="relative flex flex-col shadow-md rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 max-w-sm">
+      <div className="relative flex flex-col bg-gray-100 shadow-md rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 max-w-sm">
         <div className="h-auto overflow-hidden">
           <div className="h-auto mb-4 overflow-hidden relative">
             <img src={"http://localhost:5000/" + badge.image} alt="" />
 
           </div>
-          <h4 className='mb-2 font-semibold'>{badge.title}</h4>
-          <Link to={"/main/viewbadge/" + badge._id} className='bg-blue-400 hover:bg-blue-600 rounded-sm text-white px-6'>View Details</Link>
+          <h4 className='mb-2 text-center font-semibold'>{badge.title}</h4>
+          <Link to={"/main/viewbadge/" + badge._id} className='duration-500  hover:bg-blue-600 rounded-sm text-black px-6'>View Details</Link>
         </div>
       </div>
     ))
   }
 
   return (
-    <div>
+    <div >
         <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
         <SwiperSlide>Slide 1</SwiperSlide>
         <SwiperSlide>Slide 2</SwiperSlide>
@@ -62,6 +62,8 @@ const BrowserBadge = () => {
         <SwiperSlide>Slide 9</SwiperSlide>
       </Swiper>
       <>
+
+      
         <div className="flex items-center justify-center h-72 bg-[#00e4de]">
           <div className="flex rounded-full bg-[#0d1829] px-2 w-full max-w-[600px]">
             <button className="self-center flex p-1 cursor-pointer bg-[#0d1829]">
@@ -104,7 +106,7 @@ const BrowserBadge = () => {
 
       <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray- py-6 sm:py-12">
         <div className="mx-auto max-w-screen-xl px-4 w-full">
-          <h2 className="mb-4 flex justify-center font-bold text-6xl text-black">
+          <h2 className="mb-4 flex justify-center font-semibold text-6xl text-black ">
             Badges
           </h2>
 
@@ -113,6 +115,7 @@ const BrowserBadge = () => {
           </div>
         </div>
       </div>
+
     </div>
   )
 }
