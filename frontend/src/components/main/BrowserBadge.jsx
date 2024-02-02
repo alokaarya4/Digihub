@@ -29,6 +29,15 @@ const BrowserBadge = () => {
     }
   }
 
+  // For Search code----------------------
+  const searchBadges = () => {
+    setBadgeList(
+      masterList.filter(badge => badge.title.toLowerCase().includes(browseRef.current.value.toLowerCase()))
+    );
+  }
+//---------------------------------
+
+
   useEffect(() => {
     fetchBadges();
   }, [])
@@ -42,7 +51,7 @@ const BrowserBadge = () => {
 
           </div>
           <h4 className='mb-2 text-center font-semibold'>{badge.title}</h4>
-          <Link to={"/main/viewbadge/" + badge._id} className='duration-500  hover:bg-blue-600 rounded-sm text-black px-6'>View Details</Link>
+          <Link to={"/main/viewbadge/" + badge._id} className='duration-500 font-semibold hover:bg-blue-600 rounded-sm text-black px-6'>View Details</Link>
         </div>
       </div>
     ))
@@ -74,7 +83,7 @@ const BrowserBadge = () => {
               className="w-full bg-[#0d1829] flex bg-transparent pl-2 text-[#cccccc] outline-0"
               placeholder="Broswe Badges Search Here"
             />
-            <button type="submit" className="relative p-2 bg-[#0d1829] rounded-full">
+            <button type="submit" className="relative p-2 bg-[#0d1829] rounded-full" onClick={searchBadges}>
               <svg
                 width="30px"
                 height="30px"

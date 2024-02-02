@@ -23,9 +23,11 @@ const ViewBadge = () => {
 
   const displayBadgeData = () => {
     if (badgeData !== null) {
-      return (
-        
-        <div className="mr-auto  text-center grid text-3xl grid-cols-2 gap-20 place-self-center lg:col-span-7">
+      return (<div className="grid grid-cols-2">
+
+        <div className="max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-4 lg:pt-28">
+
+
           <div className="relative flex flex-col shadow-md rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 max-w-sm">
             <div className="h-auto overflow-hidden">
               <div className="mb-2 overflow-hidden  relative">
@@ -34,13 +36,17 @@ const ViewBadge = () => {
               <h4 className='mb-2 text-center text-2xl font-semibold'>{badgeData.title}</h4>
             </div>
           </div>
-          <h5 className='ml-auto font-bold'> . {badgeData.category}
-          <p className="mt-12 text-gray-600 font-semibold lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-            {badgeData.description}
-          </p>
+
+        </div>
+        <div className='max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-8 lg:pt-28'>
+          <h5 className='ml-auto font-bold'>{badgeData.category}
+            <p className="mt-12 text-gray-600 font-semibold lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+              {badgeData.description}
+            </p>
           </h5>
         </div>
-      
+      </div>
+
       )
     }
   }
@@ -55,15 +61,11 @@ const ViewBadge = () => {
       </div>
 
       <section className="bg-white dark:bg-gray-900">
-        <div className="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28">
 
-          {/* <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
-      <img src="/AAAA.jpg" alt="computer image" className='rounded-md'/>
-    </div> */}
-          {displayBadgeData()}
+      
+        {displayBadgeData()}
 
 
-        </div>
       </section>
 
 

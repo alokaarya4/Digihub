@@ -20,7 +20,7 @@ const Home = () => {
        Verify badges<br />
         Student &amp; Certification.
       </h1>
-      <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+      <p className="max-w-2xl mb-6 font-semibold text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
       Students from partner Institute & Collages sign up through the DigiHub to their Institute & Collages. Once they sign up, they immediately receive a Verified Student Badge which qualifies them as reliable Students. </p>
       
       <div className="space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
@@ -160,8 +160,8 @@ const Home = () => {
 <section className="bg-white dark:bg-gray-900">
   <div className="max-w-screen-xl px-4 py-8 mx-auto lg:py-24 lg:px-6">
     <div className="max-w-screen-md mx-auto mb-8 text-center lg:mb-12">
-      <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
-        Designed for business teams like yours
+      <h2 className="mb-4 text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+       Our Courses
       </h2>
       <p className="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">
         Here at Landwind we focus on markets where technology, innovation, and
@@ -195,7 +195,7 @@ const Home = () => {
                 clipRule="evenodd"
               />
             </svg>
-            <span>Only available at digipodium.</span>
+            <span>Only available at DigiHub.</span>
           </li>
           <li className="flex items-center space-x-3">
             {/* Icon */}
@@ -272,7 +272,7 @@ const Home = () => {
           href="#"
           className="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900"
         >
-          Get started
+          Registration Now
         </a>
       </div>
       <div className="flex flex-col max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
@@ -300,7 +300,7 @@ const Home = () => {
                 clipRule="evenodd"
               />
             </svg>
-            <span>Only available at digipodium.</span>
+            <span>Only available at DigiHub.</span>
           </li>
           <li className="flex items-center space-x-3">
             {/* Icon */}
@@ -377,7 +377,7 @@ const Home = () => {
           href="#"
           className="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900"
         >
-          Get started
+         Registration Now
         </a>
       </div>
       <div className="flex flex-col max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
@@ -405,7 +405,7 @@ const Home = () => {
                 clipRule="evenodd"
               />
             </svg>
-            <span>Only available at digipodium.</span>
+            <span>Only available at DigiHub.</span>
           </li>
           <li className="flex items-center space-x-3">
             {/* Icon */}
@@ -482,7 +482,7 @@ const Home = () => {
           href="#"
           className="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900"
         >
-          Get started
+         Registration Now
         </a>
       </div>
 
