@@ -44,7 +44,7 @@ const BrowserBadge = () => {
 
   const displayBadges = () => {
     return badgeList.map(badge => (
-      <div className="relative flex flex-col bg-gray-100 shadow-md rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 max-w-sm">
+      <div className="relative flex flex-col bg-white shadow-lg shadow-gray-500 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 max-w-sm">
         <div className="h-auto overflow-hidden">
           <div className="h-auto mb-4 overflow-hidden relative">
             <img src={"http://localhost:5000/" + badge.image} alt="" />
@@ -58,10 +58,10 @@ const BrowserBadge = () => {
   }
 
   return (
-    <div >
+    <div className='bg-purple-200'>
         <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
+        <SwiperSlide><img src="/Slide 2.jpg" className='w-full '></img></SwiperSlide>
+        <SwiperSlide><img src="/Slide 1.jpg" className='w-full'></img></SwiperSlide>
         <SwiperSlide>Slide 3</SwiperSlide>
         <SwiperSlide>Slide 4</SwiperSlide>
         <SwiperSlide>Slide 5</SwiperSlide>
@@ -73,43 +73,50 @@ const BrowserBadge = () => {
       <>
 
       
-        <div className="flex items-center justify-center h-72 bg-[#00e4de]">
-          <div className="flex rounded-full bg-[#0d1829] px-2 w-full max-w-[600px]">
-            <button className="self-center flex p-1 cursor-pointer bg-[#0d1829]">
-            </button>
-            <input
-              type="text"
-              ref={browseRef}
-              className="w-full bg-[#0d1829] flex bg-transparent pl-2 text-[#cccccc] outline-0"
-              placeholder="Broswe Badges Search Here"
+        <div>
+        <label
+    className="mx-auto mt-40 relative bg-white min-w-sm max-w-2xl flex flex-col md:flex-row items-center justify-center border py-2 px-2 rounded-2xl gap-2 shadow-2xl focus-within:border-gray-300"
+    htmlFor="search-bar"
+  >
+    <input
+      id="search-bar"
+      ref={browseRef}
+      placeholder="Verify Badge ID"
+      className="px-6 py-2 w-full rounded-md flex-1 outline-none bg-white"
+    />
+    <button className="w-full md:w-auto px-6 py-3 bg-blue-500  hover:bg-blue-900 duration-300 text-white fill-white active:scale-95 border will-change-transform overflow-hidden relative rounded-xl transition-all disabled:opacity-70" onClick={searchBadges}>
+      <div className="relative">
+        
+        <div className="flex items-center justify-center h-3 w-3 absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 transition-all">
+          <svg
+            className="opacity-0 animate-spin w-full h-full"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <circle
+              className="opacity-25"
+              cx={12}
+              cy={12}
+              r={10}
+              stroke="currentColor"
+              strokeWidth={4}
             />
-            <button type="submit" className="relative p-2 bg-[#0d1829] rounded-full" onClick={searchBadges}>
-              <svg
-                width="30px"
-                height="30px"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g id="SVGRepo_bgCarrier" strokeWidth={0} />
-                <g
-                  id="SVGRepo_tracerCarrier"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <g id="SVGRepo_iconCarrier">
-                  {" "}
-                  <path
-                    d="M14.9536 14.9458L21 21M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
-                    stroke="#999"
-                    strokeWidth={2}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />{" "}
-                </g>
-              </svg>
-            </button>
-          </div>
+            <path
+              className="opacity-75"
+              fill="currentColor"
+              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+            ></path>
+          </svg>
+        </div>
+        <div className="flex items-center transition-all opacity-1 valid:">
+          <span className="text-sm font-semibold whitespace-nowrap truncate mx-auto">
+            Search
+          </span>
+        </div>
+      </div>
+    </button>
+  </label>
         </div>
       </>
 

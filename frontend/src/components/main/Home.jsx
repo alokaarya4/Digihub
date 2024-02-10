@@ -13,7 +13,7 @@ const Home = () => {
  
    
 
-<section className="bg-white dark:bg-gray-900">
+<section className=" bg-[url('/Backgrounds/back-1.png')] bg-cover dark:bg-gray-900">
   <div className="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28">
     <div className="mr-auto place-self-center lg:col-span-7">
       <h1 className="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl dark:text-white">
@@ -38,35 +38,41 @@ const Home = () => {
     </div>
    
     <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
-      <img src="/AAAA.jpg" alt="computer image" className='rounded-md'/>
+      <img src="/badge-02.png" alt="Badge Image" className=''/>
     </div>
   </div>
 </section>
 
-<section className="bg-purple-100">
+
+<section className="bg-purple-100 ">
+<marquee velocity={25} scrollamount="20">
   <div className="max-w-screen-xl px-4 pb-8 mx-auto lg:pb-16">
     <div className="grid grid-cols-2 gap-8 text-gray-500 sm:gap-12 sm:grid-cols-3 lg:grid-cols-6 dark:text-gray-400">
-      <a href="#" className="flex items-center lg:justify-center">
-        <img src="/MERN-logo.png" onClick={()=> {navigate('/main/viewbadges/')}}/>
+      <a href="" className="flex items-center lg:justify-center">
+        <img src="/MERN-logo.png" />
       </a>
-      <a href="#" className="flex items-center lg:justify-center">
+      <a href="https://www.python.org/" target='_blank' className="flex items-center lg:justify-center">
         <img src="/pythonlogo1.png" className='m-4'/>
       </a>
-      <a href="#" className="flex items-center lg:justify-center">
+      <a href="https://kotlinlang.org/" target='_blank' className="flex items-center lg:justify-center">
         <img src="/kotlin.png" />
       </a>
-      <a href="#" className="flex items-center lg:justify-center">
+      <a href="https://react.dev/" target='_blank' className="flex items-center lg:justify-center">
         <img src="/React-logo1.png" />
       </a>
-      <a href="#" className="flex items-center lg:justify-center">
+      <a href="https://angular.io/" target='_blank' className="flex items-center lg:justify-center">
         <img src="/Angular1.png" />        
      </a>
-      <a href="#" className="bg-auto">
+      <a href="https://www.javascript.com/" target='_blank' className="bg-auto">
          <img src="/JavaScript-logo.png" className='mt-4' />
         </a>
     </div>
   </div>
+  </marquee>
 </section>
+
+
+
 
 <section className="bg-white dark:bg-gray-900">
   <div className="items-center max-w-screen-xl px-4 py-8 mx-auto lg:grid lg:grid-cols-4 lg:gap-16 xl:gap-24 lg:py-24 lg:px-6">
@@ -134,8 +140,8 @@ const Home = () => {
   </div>
 </section>
 
-<section className="bg-gray-50 dark:bg-gray-800">
-  <div className="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-24 lg:px-6">
+<section className="bg-gray-50 rounded-xl dark:bg-gray-800">
+  <div className="max-w-screen-xl container bg-purple-200 rounded-3xl shadow-xl shadow-slate-600 px-4 py-8 mx-auto text-center lg:py-24 lg:px-6">
     <figure className="max-w-screen-md mx-auto">
       <svg
         className="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600"
@@ -149,7 +155,7 @@ const Home = () => {
         />
       </svg>
       <blockquote>
-        <p className="text-xl font-medium text-gray-900 md:text-2xl dark:text-white">
+        <p className="text-xl font-semibold text-gray-900 md:text-2xl dark:text-white">
         Badges mean nothing in themselves, but they mark a certain achievement and they are a link between the rich and the poor.
         </p>
       </blockquote>
@@ -176,8 +182,8 @@ const Home = () => {
         Kotlin for App Development
         </p>
         <div className="flex items-baseline justify-center my-8">
-          <span className="mr-2 text-5xl font-extrabold">$499</span>
-          <span className="text-gray-500 dark:text-gray-400">/month</span>
+          <span className="mr-2 text-5xl font-semibold">10000 RS</span>
+          <span className="text-gray-500 dark:text-gray-400">/ 6 month</span>
         </div>
         {/* List */}
         <ul role="list" className="mb-8 space-y-4 text-left">

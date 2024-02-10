@@ -55,7 +55,7 @@ const ViewBadge = () => {
   return (
     <div>
       <div>
-        <h1 className="text-center text-6xl font-bold pt-10 underline">
+        <h1 className="text-center text-6xl font-bold pt-10">
           View Badges
         </h1>
       </div>
@@ -67,10 +67,6 @@ const ViewBadge = () => {
 
 
       </section>
-
-
-
-
     </div>
   )
 }

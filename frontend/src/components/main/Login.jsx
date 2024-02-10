@@ -44,12 +44,12 @@ const Login = () => {
         });
 
         const data = await res.json();
-        if(data.role !== 'admin'){
-          sessionStorage.setItem('admin', JSON.stringify(data));
-          navigate('/main/Student');
+        if(data.role === 'admin'){
+          sessionStorage.setItem('admintoken', JSON.stringify(data));
+          navigate('/admin/addstudent');
         }else{
-          sessionStorage.setItem('user', JSON.stringify(data));
-          navigate('/main/browse');
+          sessionStorage.setItem('token', JSON.stringify(data));
+          navigate('/main/Student');
         }
         setLoggedIn(true);
 

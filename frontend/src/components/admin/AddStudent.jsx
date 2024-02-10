@@ -89,7 +89,7 @@ const uploadFile = async (e) => {
               <div className="lg:col-span-2">
                 <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
                 <div className="md:col-span-2">
-                    <label className='font-semibold'>Registration Number</label>
+                    <label htmlFor='registrationNumber' className='font-semibold'>Registration Number</label>
                     <input
                       type="text"
                       name="registrationNumber"
@@ -100,7 +100,7 @@ const uploadFile = async (e) => {
                     />
                   </div>
                   <div className="md:col-span-5">
-                    <label className='font-semibold'>Full Name</label>
+                    <label htmlFor='name' className='font-semibold'>Full Name</label>
                     <input
                       type="text"
                       name="fullName"
@@ -111,7 +111,7 @@ const uploadFile = async (e) => {
                   </div>
                   
                   <div className="md:col-span-5">
-                    <label className='font-semibold'>Email Address</label>
+                    <label htmlFor='email' className='font-semibold'>Email Address</label>
                     <input
                       type="text"
                       name="emailAddress"
@@ -122,7 +122,7 @@ const uploadFile = async (e) => {
                     />
                   </div>
                   <div className="md:col-span-3">
-                    <label className='font-semibold'>Address</label>
+                    <label htmlFor='address' className='font-semibold'>Address</label>
                     <input
                       type="text"
                       name="address"
@@ -133,7 +133,7 @@ const uploadFile = async (e) => {
                     />
                   </div>
                   <div className="md:col-span-2">
-                    <label className='font-semibold'>City</label>
+                    <label htmlFor='city' className='font-semibold'>City</label>
                     <input
                       type="text"
                       name="city"
@@ -145,9 +145,10 @@ const uploadFile = async (e) => {
                   </div>
                   
                   <div className="md:col-span-2">
-                    <label className='font-semibold'>Country</label>
+                    <label htmlFor='country' className='font-semibold'>Country</label>
                     <div className="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
                       <input
+                        type='text'
                         name="country"
                         id="country"
                         placeholder=""
@@ -159,7 +160,7 @@ const uploadFile = async (e) => {
                     </div>
                   </div>
                   <div className="md:col-span-2">
-                    <label className='font-semibold'>State</label>
+                    <label htmlFor='state' className='font-semibold'>State</label>
                     <div className="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
                       <input
                         name="state"
@@ -169,20 +170,15 @@ const uploadFile = async (e) => {
                         defaultValue=""  onChange={AddStudent.handleChange} value={AddStudent.values.state}
                       />
                      
-                      <button
-                        tabIndex={-1}
-                        htmlFor="show_more"
-                        className="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-300 hover:text-blue-600"
-                      >
-                       
-                      </button>
+                    
                     </div>
                   </div>
                   <div className="md:col-span-1">
-                    <label className='font-semibold'>Pincode</label>
+                    <label htmlFor="pincode" className='font-semibold'>Pincode</label>
                     <input
                       type="number"
                       name="pinCode"
+                      id='pincode'
                       className="transition-all flex items-center h-10 border mt-1 rounded px-4 w-full bg-gray-50"
                       placeholder=""
                       defaultValue=""  onChange={AddStudent.handleChange} value={AddStudent.values.pinCode}
@@ -190,7 +186,7 @@ const uploadFile = async (e) => {
                   </div>
 
                   <div className="md:col-span-2">
-                    <label className='font-semibold'>Mobile Number</label>
+                    <label htmlFor='mobileNumber' className='font-semibold'>Mobile Number</label>
                     <div className="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
                       <input
                         type='number'

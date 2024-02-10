@@ -43,6 +43,7 @@ const Student = () => {
     return issuedBadges.map((badge) => (
       <div>
         <h1 className='p-4 font-semibold text-black '>Badge ID :- {badge.badge.badgeId}</h1>
+        <h1 className='p-4 font-semibold text-black '>Category :- {badge.badge.category}</h1>
         <div className=" border mt-8 w-52" key={badge._id}>
           <img className='w-52' src={"http://localhost:5000/" + badge.badge.image} alt="" />
           <div className="card-body">
@@ -80,7 +81,7 @@ const Student = () => {
         <h1 className='text-center text-4xl font-bold'>Student Profile</h1>
 
         <div>
-          <div className="flex bg-[url('/Badge.png')] items-center justify-center my-10">
+          <div className="flex  items-center justify-center my-10">
             <div className="flex rounded-full bg-[#0d1829] px-2 w-full max-w-[600px]">
               <button className="self-center flex p-1 cursor-pointer bg-[#0d1829]">
               </button>

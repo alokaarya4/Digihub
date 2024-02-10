@@ -40,8 +40,8 @@ router.get('/getbyid/:id', (req, res) => {
     });
 });
 
-router.get('/getbyemail/:email', (req, res) => {
-    Model.find({ email : req.params.email })
+router.get('/getbybadgeid/:badgeid', (req, res) => {
+    Model.findOne({ badgeId : req.params.badgeid })
     .then((result) => {
         res.json(result);
     }).catch((err) => {

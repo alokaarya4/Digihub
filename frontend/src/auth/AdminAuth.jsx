@@ -5,7 +5,7 @@ import { Navigate } from 'react-router-dom';
 const AdminAuth = ({ children }) => {
 
     const hasRun = useRef(false);
-    const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('admin')));
+    const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('admintoken')));
 
     useEffect(() => {
         if (currentUser === null && !hasRun.current) {
@@ -20,7 +20,7 @@ const AdminAuth = ({ children }) => {
     if (currentUser !== null) {
         return children;
     } else {
-        return <Navigate to='/main/login' />
+        return <Navigate to='/main/Student' />
     }
 }
 
