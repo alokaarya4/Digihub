@@ -3,13 +3,9 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
-
 const Signup = () => {
-
   const navigate = useNavigate();
-
   const [selImage, setSelImage] = useState('');
-
   const signupForm = useFormik({
     initialValues: {
       name: '',
@@ -29,7 +25,6 @@ const Signup = () => {
           'Content-Type': 'application/json'
         }
       });
-
       console.log(res.status);
 
       if(res.status === 200){
@@ -45,11 +40,9 @@ const Signup = () => {
     }
   })
 
-  
-
   return (
     
-    <>
+         <>
   
   <div className="h-full bg-[url('/Login-here.png')] bg-gray-100 dark:bg-gray-900">
     <div className="mx-auto">
@@ -150,11 +143,9 @@ const Signup = () => {
       </div>
     </div>
   </div>
-</>
 
 
-  
-  );
+</> 
+);
 };
-
 export default Signup;

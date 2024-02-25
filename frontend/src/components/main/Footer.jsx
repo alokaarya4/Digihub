@@ -3,7 +3,9 @@ import React from 'react'
 const Footer = () => {
   return (
   
-    <>
+       <>
+
+
   <section className="bg-white">
     <div className="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
       <div className="flex justify-center mt-8 space-x-6">
@@ -84,10 +86,9 @@ const Footer = () => {
       </p>
     </div>
   </section>
+
+
     </>
-
-
   )
 }
-
 export default Footer;

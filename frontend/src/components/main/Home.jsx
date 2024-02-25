@@ -3,15 +3,11 @@ import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
 
-   
-   
   const navigate = useNavigate();
 
-  
   return (
     <div>
- 
-   
+
 
 <section className=" bg-[url('/Backgrounds/back-1.png')] bg-cover dark:bg-gray-900">
   <div className="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28">
@@ -43,7 +39,6 @@ const Home = () => {
   </div>
 </section>
 
-
 <section className="bg-purple-100 ">
 <marquee velocity={25} scrollamount="20">
   <div className="max-w-screen-xl px-4 pb-8 mx-auto lg:pb-16">
@@ -70,9 +65,6 @@ const Home = () => {
   </div>
   </marquee>
 </section>
-
-
-
 
 <section className="bg-white dark:bg-gray-900">
   <div className="items-center max-w-screen-xl px-4 py-8 mx-auto lg:grid lg:grid-cols-4 lg:gap-16 xl:gap-24 lg:py-24 lg:px-6">
@@ -174,9 +166,9 @@ const Home = () => {
         capital can unlock long-term value and drive economic growth.
       </p>
     </div>
-    <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
+    <div className="space-y-8  lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
       
-      <div className="flex flex-col max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+      <div className="flex flex-col duration-300 active:scale-95 will-change-transform transition-all  max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
         <h3 className="mb-4 text-6xl font-semibold">Kotlin</h3>
         <p className="font-semilight text-gray-500 sm:text-lg dark:text-gray-400">
         Kotlin for App Development
@@ -496,15 +488,8 @@ const Home = () => {
   </div>
 </section>
 
-
-
-
-
+    
     </div>
-
-
-
   )
 }
-
 export default Home

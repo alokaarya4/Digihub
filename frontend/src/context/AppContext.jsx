@@ -24,6 +24,8 @@ export const AppProvider = ({children}) => {
         navigate('/login');
     }
 
+        
+
     return <AppContext.Provider value={{loggedIn, setLoggedIn, logout}} >
         {children}
     </AppContext.Provider>

@@ -1,4 +1,6 @@
-
+*{
+ font-family: Assistant,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+}
     .login{
         .background--custom {
             background-color: #FFFFFF;
@@ -8,6 +10,9 @@
             z-index: -1;
             top: 0;
             left: 0;
+
+          
+            
           }
           @keyframes path0 {
             0% {
@@ -35,6 +40,7 @@
           }
 
     }
+
 
 
 

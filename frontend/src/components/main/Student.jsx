@@ -4,11 +4,9 @@ import { useNavigate } from 'react-router-dom';
 const Student = () => {
 
   const navigate = useNavigate();
-
   const searchRef = useRef(null);
   const [studentData, setStudentData] = useState(null);
   const [issuedBadges, setIssuedBadges] = useState([]);
-
   const getIssuedBadges = async (studentId) => {
     const res = await fetch('http://localhost:5000/issue/getbystudent/' + studentId);
     console.log(res.status);
@@ -27,7 +25,6 @@ const Student = () => {
       headers: {
         'Content-Type': 'application/json'
       }
-
     });
     console.log(res.status);
 
@@ -56,14 +53,14 @@ const Student = () => {
 
   const displayStudentData = () => {
     if (studentData !== null) {
-      return <div className="mr-auto m-36  grid grid-cols-2 place-self-center lg:col-span-7">
-        <h1 className='font-semibold p-4'>Name :- {studentData.fullName}</h1>
+      return <div className="grid grid-cols-2 lg:col-span-7">
         <h1 className='font-semibold p-4'>Registration Number :- {studentData.registrationNumber}</h1>
+        <h1 className='font-semibold p-4'>Name :- {studentData.fullName}</h1>
+        <h1 className='font-semibold p-4'>Email Address :- {studentData.emailAddress}</h1>
         <h1 className='font-semibold p-4'>Address :- {studentData.address}</h1>
         <h1 className='font-semibold p-4'>City :- {studentData.city}</h1>
         <h1 className='font-semibold p-4'>Country :- {studentData.country}</h1>
         <h1 className='font-semibold p-4'>State :- {studentData.state}</h1>
-        <h1 className='font-semibold p-4'>Email Address :- {studentData.emailAddress}</h1>
         <h1 className='font-semibold p-4'>Pin Code :- {studentData.pinCode}</h1>
         <h1 className='font-semibold p-4'>Mobile Number :- {studentData.mobileNumber}</h1>
         {displayBadges()}
@@ -71,13 +68,12 @@ const Student = () => {
     } else {
       return <h1 className='text-black font-semibold text-center'>Enter Student Registration Number to Search Here</h1>
     }
-
   }
 
   return (
     <>
-
-      <div className='container shadow-lg rounded-lg bg-purple-100 shadow-slate-300 m-40 p-10 w-auto mt-10'>
+           <div className='justify-center flex'>
+      <div className='shadow-lg rounded-lg bg-purple-100 shadow-slate-300 w-max p-10 mt-10'>
         <h1 className='text-center text-4xl font-bold'>Student Profile</h1>
 
         <div>
@@ -122,6 +118,7 @@ const Student = () => {
           </div>
           {displayStudentData()}
         </div>
+      </div>
       </div>
 
       <section className="bg-white dark:bg-gray-900">
@@ -213,12 +210,8 @@ const Student = () => {
         </div>
       </section>
 
-     
-
 
     </>
   )
 }
-
-
 export default Student

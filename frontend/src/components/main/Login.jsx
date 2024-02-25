@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
+
 const loginSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Email is Required'),
   password: Yup.string().required('Password is Required')
@@ -35,7 +36,6 @@ const Login = () => {
         }
       });
 
-
       console.log(res.status);
       if (res.status === 200) {
         Swal.fire({
@@ -44,6 +44,7 @@ const Login = () => {
         });
 
         const data = await res.json();
+        console.log(data);
         if(data.role === 'admin'){
           sessionStorage.setItem('admintoken', JSON.stringify(data));
           navigate('/admin/addstudent');
@@ -65,11 +66,7 @@ const Login = () => {
           title: 'Something went wrong!!'
         })
       }
-
-      // submit values to the backend
     },
-
-    // validationSchema: loginSchema
   });
 
   return (
@@ -192,7 +189,6 @@ const Login = () => {
           </div>
         </div>
       </div>
-
 
     </>
   )

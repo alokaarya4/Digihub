@@ -96,7 +96,7 @@ router.post('/authenticate', (req, res) => {
                     res.status(500).json(err);
 
                 }
-                else res.status(200).json({token : token});
+                else res.status(200).json({token : token, role : result.role});
             }
         )
 

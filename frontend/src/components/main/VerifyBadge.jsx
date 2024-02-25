@@ -5,7 +5,6 @@ const VerifyBadge = () => {
   const badgeRef = useRef(null);
   const [badgeData, setBadgeData] = useState(null);
 
-
   const searchbadge = async () => {
     console.log(badgeRef.current.value);
     const res = await fetch('http://localhost:5000/badge/getbybadgeid/' + badgeRef.current.value);
@@ -15,20 +14,18 @@ const VerifyBadge = () => {
     setBadgeData(data);
   }
 
-
   const displayBadgeData = () => {
-
-
     if (badgeData !== null) {
-      return <div className="grid grid-cols-2">
-
+      return <div className="">
 
         <h1 className='p-4 font-semibold text-black '>Badge ID :- {badgeData.badgeId}</h1>
         <h1 className='p-4 font-semibold text-black '>Category :- {badgeData.category}</h1>
-
+        <h1 className='p-4 font-semibold text-black '>Title :- {badgeData.title}</h1>
+        <h1 className='p-4 font-semibold text-black '>Description :- {badgeData.description}</h1>
       </div>
+
     } else {
-      return <h1 className='text-black font-semibold text-center'>Badge ID is Not Valid</h1>
+      return <h1 className='text-black mt-5 font-semibold text-center'>Badge ID is Not Valid</h1>
     }
   }
 
@@ -84,5 +81,4 @@ const VerifyBadge = () => {
     </div>
   )
 }
-
 export default VerifyBadge;

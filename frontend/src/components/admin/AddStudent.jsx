@@ -64,10 +64,6 @@ const uploadFile = async (e) => {
   console.log(res.status);
 };
 
-
-
-
-
   return (
 
     <>
@@ -82,10 +78,8 @@ const uploadFile = async (e) => {
                 <img className="h-80 mb-5 shadow-slate-300 shadow-lg" src="/ASF.jfif"></img>
                 <p className="font-medium text-2xl">Personal Details</p>
                 <p>Please fill out all the fields.</p>
-
               </div>
 
-                             
               <div className="lg:col-span-2">
                 <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
                 <div className="md:col-span-2">
@@ -155,10 +149,10 @@ const uploadFile = async (e) => {
                         className="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent"
                         defaultValue="" onChange={AddStudent.handleChange} value={AddStudent.values.country}
                       />
-                    
-                     
                     </div>
                   </div>
+
+
                   <div className="md:col-span-2">
                     <label htmlFor='state' className='font-semibold'>State</label>
                     <div className="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
@@ -169,8 +163,6 @@ const uploadFile = async (e) => {
                         className="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent"
                         defaultValue=""  onChange={AddStudent.handleChange} value={AddStudent.values.state}
                       />
-                     
-                    
                     </div>
                   </div>
                   <div className="md:col-span-1">
