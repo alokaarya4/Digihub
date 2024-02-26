@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
 
   const navigate = useNavigate();
+
+  const [userlist, setUserlist] = useState([]);
+  
+  const fetchUserData = async()=> {
+    const res=await fetch('http://localhost:5000/user/getall');
+    console.log (res.status);
+
+    if(res.status===200){
+        const data =await res.json();
+        console.log(data);
+        setUserlist(data);
+    }
+};
 
 
   return (
@@ -40,9 +53,9 @@ const Home = () => {
   </div>
 </section>
 
-<section className="bg-purple-100 ">
+<section className="bg-purple-100 "> 
 <marquee velocity={25} scrollamount="20">
-  <div className="max-w-screen-xl px-4 pb-8 mx-auto lg:pb-16">
+  <div className="max-w-screen-xl pb-8 mx-auto lg:pb-16">
     <div className="grid grid-cols-2 gap-8 text-gray-500 sm:gap-12 sm:grid-cols-3 lg:grid-cols-6 dark:text-gray-400">
       <a href="" className="flex items-center lg:justify-center">
         <img src="/MERN-logo.png" />
@@ -54,7 +67,7 @@ const Home = () => {
         <img src="/kotlin.png" />
       </a>
       <a href="https://react.dev/" target='_blank' className="flex items-center lg:justify-center">
-        <img src="/React-logo1.png" />
+        <img src="/React-logo1.png"/>
       </a>
       <a href="https://angular.io/" target='_blank' className="flex items-center lg:justify-center">
         <img src="/Angular1.png" />        
@@ -134,7 +147,7 @@ const Home = () => {
   </div>
 </section>
 
-<section className="bg-gray-50 rounded-xl dark:bg-gray-800">
+<section className="bg-gray-50 rounded-xl  dark:bg-gray-800">
   <div className="max-w-screen-xl container bg-purple-200 rounded-3xl shadow-xl shadow-slate-600 px-4 py-8 mx-auto text-center lg:py-24 lg:px-6">
     <figure className="max-w-screen-md mx-auto">
       <svg
@@ -268,7 +281,7 @@ const Home = () => {
           </li>
         </ul>
         <button
-          className="text-white hover:bg-purple-900 bg-purple-600 active:bg-blue-800 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900"  onClick={() => { navigate('/main/registrationform/' + user._id) }}
+          className="text-white hover:bg-purple-900 bg-purple-600 active:bg-blue-800 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900"  onClick={() => {navigate('/main/registrationform') }}
         >
           Registration Now
         </button>
