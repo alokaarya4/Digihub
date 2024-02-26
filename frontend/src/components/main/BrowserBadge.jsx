@@ -1,13 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
 
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-
-import { Navigation } from 'swiper/modules';
 
 const BrowserBadge = () => {
 
@@ -59,23 +53,10 @@ const BrowserBadge = () => {
 
   return (
     <div className='bg-purple-200'>
-        <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-        <SwiperSlide><img src="/Slide 2.jpg" className='w-full '></img></SwiperSlide>
-        <SwiperSlide><img src="/Slide 1.jpg" className='w-full'></img></SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
-      </Swiper>
-      <>
-
-      
-        <div>
+       
+        <div className=''> 
         <label
-    className="mx-auto mt-40 relative bg-white min-w-sm max-w-2xl flex flex-col md:flex-row items-center justify-center border py-2 px-2 rounded-2xl gap-2 shadow-2xl focus-within:border-gray-300"
+    className="mx-auto relative bg-white min-w-sm max-w-2xl flex flex-col md:flex-row items-center justify-center border py-2 px-2 rounded-2xl gap-2 shadow-2xl focus-within:border-gray-300"
     htmlFor="search-bar"
   >
     <input
@@ -118,7 +99,6 @@ const BrowserBadge = () => {
     </button>
   </label>
         </div>
-      </>
 
       <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray- py-6 sm:py-12">
         <div className="mx-auto max-w-screen-xl px-4 w-full">

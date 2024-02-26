@@ -5,6 +5,7 @@ const Home = () => {
 
   const navigate = useNavigate();
 
+
   return (
     <div>
 
@@ -12,7 +13,7 @@ const Home = () => {
 <section className=" bg-[url('/Backgrounds/back-1.png')] bg-cover dark:bg-gray-900">
   <div className="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28">
     <div className="mr-auto place-self-center lg:col-span-7">
-      <h1 className="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl dark:text-white">
+      <h1 className="max-w-2xl mb-4 text-4xl font-extrabold leaq  ding-none tracking-tight md:text-5xl xl:text-6xl dark:text-white">
        Verify badges<br />
         Student &amp; Certification.
       </h1>
@@ -65,6 +66,7 @@ const Home = () => {
   </div>
   </marquee>
 </section>
+
 
 <section className="bg-white dark:bg-gray-900">
   <div className="items-center max-w-screen-xl px-4 py-8 mx-auto lg:grid lg:grid-cols-4 lg:gap-16 xl:gap-24 lg:py-24 lg:px-6">
@@ -159,16 +161,15 @@ const Home = () => {
   <div className="max-w-screen-xl px-4 py-8 mx-auto lg:py-24 lg:px-6">
     <div className="max-w-screen-md mx-auto mb-8 text-center lg:mb-12">
       <h2 className="mb-4 text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white">
-       Our Courses
+       Our Popular Courses
       </h2>
       <p className="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">
-        Here at Landwind we focus on markets where technology, innovation, and
-        capital can unlock long-term value and drive economic growth.
+       The Our Courses for you depends on your interests, career goals, and current skill level. Here are some popular and widely recognized courses that cover a range of topics:
       </p>
     </div>
     <div className="space-y-8  lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
       
-      <div className="flex flex-col duration-300 active:scale-95 will-change-transform transition-all  max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+      <div className="flex flex-col duration-300  max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
         <h3 className="mb-4 text-6xl font-semibold">Kotlin</h3>
         <p className="font-semilight text-gray-500 sm:text-lg dark:text-gray-400">
         Kotlin for App Development
@@ -266,12 +267,11 @@ const Home = () => {
             </span>
           </li>
         </ul>
-        <a
-          href="#"
-          className="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900"
+        <button
+          className="text-white hover:bg-purple-900 bg-purple-600 active:bg-blue-800 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900"  onClick={() => { navigate('/main/registrationform/' + user._id) }}
         >
           Registration Now
-        </a>
+        </button>
       </div>
       <div className="flex flex-col max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
         <h3 className="mb-4 text-6xl font-semibold">Python</h3>
@@ -371,12 +371,11 @@ const Home = () => {
             </span>
           </li>
         </ul>
-        <a
-          href="#"
-          className="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900"
+        <button
+          className="text-white bg-purple-600 hover:bg-purple-900 active:bg-blue-800 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900"
         >
          Registration Now
-        </a>
+        </button>
       </div>
       <div className="flex flex-col max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
         <h3 className="mb-4 text-6xl font-semibold">MEAN</h3>
@@ -476,12 +475,12 @@ const Home = () => {
             </span>
           </li>
         </ul>
-        <a
-          href="#"
-          className="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900"
+        <button
+          
+          className="text-white bg-purple-600 hover:bg-purple-900 active:bg-blue-800 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900"
         >
          Registration Now
-        </a>
+        </button>
       </div>
 
     </div>
