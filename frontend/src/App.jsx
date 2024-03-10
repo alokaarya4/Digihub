@@ -43,7 +43,7 @@ function App() {
                 <Route path='verifybadge' element={<VerifyBadge />} />
                 <Route path='browserbadge' element={<BrowserBadge />} />
                 <Route path='viewbadge/:id' element={<ViewBadge />} />
-                <Route path='registrationform/:id' element={<RegistrationForm />} />
+                <Route path='registrationform/' element={<RegistrationForm />} />
               </Route>
 
 

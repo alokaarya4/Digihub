@@ -7,6 +7,7 @@ const Student = () => {
   const searchRef = useRef(null);
   const [studentData, setStudentData] = useState(null);
   const [issuedBadges, setIssuedBadges] = useState([]);
+  
   const getIssuedBadges = async (studentId) => {
     const res = await fetch('http://localhost:5000/issue/getbystudent/' + studentId);
     console.log(res.status);

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
@@ -6,6 +6,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   const [userlist, setUserlist] = useState([]);
+  const [badgeList, setBadgeList] = useState([]);
   
   const fetchUserData = async()=> {
     const res=await fetch('http://localhost:5000/user/getall');
@@ -16,8 +17,25 @@ const Home = () => {
         console.log(data);
         setUserlist(data);
     }
-};
+  };
 
+  const fetchBadges = async () => {
+    const res = await fetch('http://localhost:5000/badge/getall');
+
+    console.log(res.status);
+    if (res.status === 200) {
+      const data = await res.json();
+      console.log(data);
+      setBadgeList(data);
+    }
+  }
+
+  useEffect(() => {
+    fetchUserData();
+    fetchBadges();
+  },[])
+
+  
 
   return (
     <div>
@@ -121,7 +139,7 @@ const Home = () => {
           />
         </svg>
         <h3 className="mb-2 text-2xl font-bold dark:text-white">
-          99.99% Verify Badges
+         {badgeList.length}
         </h3>
         <p className="font-light text-gray-500 dark:text-gray-400">
           Everyone got Badges from our DigiHub
@@ -136,7 +154,10 @@ const Home = () => {
         >
           <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
         </svg>
-        <h3 className="mb-2 text-2xl font-bold dark:text-white">100+ Student</h3>
+          <h3 className="mb-2 text-2xl font-bold dark:text-white">{userlist.length}</h3>
+       
+        
+       
         <p className="font-light text-gray-500 dark:text-gray-400">
           More and More Students Gets are Joining our DigiHub
         </p>
@@ -281,11 +302,13 @@ const Home = () => {
           </li>
         </ul>
         <button
-          className="text-white hover:bg-purple-900 bg-purple-600 active:bg-blue-800 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900"  onClick={() => {navigate('/main/registrationform') }}
+          className="text-white hover:bg-purple-900 bg-purple-600 active:bg-blue-800 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900"  onClick={() => {navigate('/main/registrationform')}}
         >
           Registration Now
         </button>
       </div>
+      
+      
       <div className="flex flex-col max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
         <h3 className="mb-4 text-6xl font-semibold">Python</h3>
         <p className="font-semilight text-gray-500 sm:text-lg dark:text-gray-400">
