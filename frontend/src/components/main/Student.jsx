@@ -7,6 +7,9 @@ const Student = () => {
   const searchRef = useRef(null);
   const [studentData, setStudentData] = useState(null);
   const [issuedBadges, setIssuedBadges] = useState([]);
+
+  const [userlist, setUserlist] = useState([]);
+  const [badgeList, setBadgeList] = useState([]);
   
   const getIssuedBadges = async (studentId) => {
     const res = await fetch('http://localhost:5000/issue/getbystudent/' + studentId);
@@ -36,6 +39,31 @@ const Student = () => {
       getIssuedBadges(data._id);
     }
   }
+
+  const fetchUserData = async()=> {
+    const res=await fetch('http://localhost:5000/user/getall');
+    console.log (res.status);
+    if(res.status===200){
+        const data =await res.json();
+        console.log(data);
+        setUserlist(data);
+    }
+  };
+
+  const fetchBadges = async () => {
+    const res = await fetch('http://localhost:5000/badge/getall');
+    console.log(res.status);
+    if (res.status === 200) {
+      const data = await res.json();
+      console.log(data);
+      setBadgeList(data);
+    }
+  }
+
+  useEffect(() => {
+    fetchUserData();
+    fetchBadges();
+  },[])
 
   const displayBadges = () => {
     return issuedBadges.map((badge) => (
@@ -162,7 +190,7 @@ const Student = () => {
                 />
               </svg>
               <h3 className="mb-2 text-2xl font-bold dark:text-white">
-                99.99% Verify Badges
+                 {badgeList.length}
               </h3>
               <p className="font-light text-gray-500 dark:text-gray-400">
                 Everyone got Badges from our DigiHub
@@ -177,7 +205,7 @@ const Student = () => {
               >
                 <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
               </svg>
-              <h3 className="mb-2 text-2xl font-bold dark:text-white">100+ Student</h3>
+              <h3 className="mb-2 text-2xl font-bold dark:text-white">{userlist.length}</h3>
               <p className="font-light text-gray-500 dark:text-gray-400">
                 More and More Students Gets are Joining our DigiHub
               </p>

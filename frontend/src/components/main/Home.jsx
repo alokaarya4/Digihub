@@ -11,7 +11,6 @@ const Home = () => {
   const fetchUserData = async()=> {
     const res=await fetch('http://localhost:5000/user/getall');
     console.log (res.status);
-
     if(res.status===200){
         const data =await res.json();
         console.log(data);
@@ -21,7 +20,6 @@ const Home = () => {
 
   const fetchBadges = async () => {
     const res = await fetch('http://localhost:5000/badge/getall');
-
     console.log(res.status);
     if (res.status === 200) {
       const data = await res.json();
@@ -35,31 +33,27 @@ const Home = () => {
     fetchBadges();
   },[])
 
-  
-
   return (
     <div>
-
-
 <section className=" bg-[url('/Backgrounds/back-1.png')] bg-cover dark:bg-gray-900">
   <div className="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28">
     <div className="mr-auto place-self-center lg:col-span-7">
-      <h1 className="max-w-2xl mb-4 text-4xl font-extrabold leaq  ding-none tracking-tight md:text-5xl xl:text-6xl dark:text-white">
+      <h1 className="max-w-2xl mb-4 text-4xl text-blue-800 font-extrabold leaq  ding-none tracking-tight md:text-5xl xl:text-6xl dark:text-white">
        Verify badges<br />
         Student &amp; Certification.
       </h1>
-      <p className="max-w-2xl mb-6 font-semibold text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+      <p className="max-w-2xl mb-6  font-semibold text-red-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
       Students from partner Institute & Collages sign up through the DigiHub to their Institute & Collages. Once they sign up, they immediately receive a Verified Student Badge which qualifies them as reliable Students. </p>
       
       <div className="space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
         <button 
-          className="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-medium text-center text-gray-900 border border-gray-200  hover:text-blue-700 rounded-lg sm:w-auto hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800" onClick={()=> {navigate('/main/Login/')}}>
+          className="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-medium text-center text-gray-900 border border-gray-200  hover:text-white active:bg-green-600 rounded-lg sm:w-auto hover:bg-blue-500 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800" onClick={()=> {navigate('/main/Login/')}}>
              Login here 
         </button>
        
        
          <button
-          className="inline-flex items-center justify-center w-full px-5 py-3 mb-2 mr-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:w-auto focus:outline-none hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" onClick={()=> {navigate('/main/SignUp/')}}>
+          className="inline-flex items-center justify-center w-full px-5 py-3 mb-2 mr-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:w-auto focus:outline-none hover:bg-blue-500 hover:text-white active:bg-green-600 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" onClick={()=> {navigate('/main/SignUp/')}}>
           Sign Up
         </button>
       </div>
@@ -73,7 +67,7 @@ const Home = () => {
 
 <section className="bg-purple-100 "> 
 <marquee velocity={25} scrollamount="20">
-  <div className="max-w-screen-xl pb-8 mx-auto lg:pb-16">
+  <div className="max-w-screen-xl lg:pb-16">
     <div className="grid grid-cols-2 gap-8 text-gray-500 sm:gap-12 sm:grid-cols-3 lg:grid-cols-6 dark:text-gray-400">
       <a href="" className="flex items-center lg:justify-center">
         <img src="/MERN-logo.png" />
@@ -118,7 +112,6 @@ const Home = () => {
             className="inline-flex items-center text-base font-medium text-purple-600 hover:text-purple-800 dark:text-purple-500 dark:hover:text-purple-700"
           >
             Learn More
-          
           </a>
         </div>
         
@@ -162,34 +155,99 @@ const Home = () => {
           More and More Students Gets are Joining our DigiHub
         </p>
       </div>
-      
-      
     </div>
   </div>
 </section>
 
-<section className="bg-gray-50 rounded-xl  dark:bg-gray-800">
-  <div className="max-w-screen-xl container bg-purple-200 rounded-3xl shadow-xl shadow-slate-600 px-4 py-8 mx-auto text-center lg:py-24 lg:px-6">
-    <figure className="max-w-screen-md mx-auto">
-      <svg
-        className="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600"
-        viewBox="0 0 24 27"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
-          fill="currentColor"
-        />
-      </svg>
-      <blockquote>
-        <p className="text-xl font-semibold text-gray-900 md:text-2xl dark:text-white">
-        Badges mean nothing in themselves, but they mark a certain achievement and they are a link between the rich and the poor.
-        </p>
-      </blockquote>
-    </figure>
+<section id="testimonials" className="py-10 m-4 lg:py-20">
+  <div className="container mx-auto">
+    <p className="uppercase tracking-wider mb-8 text-gray-600 text-center">
+      What Student Are Saying
+    </p>
+    <div className="flex flex-col md:flex-row md:-mx-3">
+      <div className="flex-1 px-3">
+        <div
+          className="p-12 rounded-lg border border-solid border-gray-200 mb-8"
+          style={{ boxShadow: "0 10px 28px rgba(0,0,0,.08)" }}
+        >
+          <p className="text-xl font-semibold">
+          If you want to learn something in life then come here
+          </p>
+          <p className="mt-6">
+          I have spent many good moments of my life here, studied here, got to learn a lot and had a lot of fun.
+          </p>
+          <div className="flex items-center mt-8">
+            <img
+              className="w-12 h-12 mr-4 rounded-full"
+              src="/Alok.jpg"
+              alt="Alok Kumar Pic"
+            />
+            <div>
+              <p>Alok Kumar</p>
+              <p className="text-sm text-gray-600">
+                MERN Stack Developer
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="flex-1 px-3">
+        <div
+          className="p-12 rounded-lg border border-solid border-gray-200 mb-8"
+          style={{ boxShadow: "0 10px 28px rgba(0,0,0,.08)" }}
+        >
+          <p className="text-xl font-semibold">
+          If you want to learn something in life then come here
+          </p>
+          <p className="mt-6">
+          I have spent many good moments of my life here, studied here, got to learn a lot and had a lot of fun.
+          </p>
+          <div className="flex items-center mt-8">
+            <img
+              className="w-12 h-12 mr-4 rounded-full"
+              src="/Alok.jpg"
+              alt="Alok Kumar Pic"
+            />
+            <div>
+              <p>Alok Kumar</p>
+              <p className="text-sm text-gray-600">
+                MERN Stack Developer
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="flex-1 px-3">
+        <div
+          className="p-12 rounded-lg border border-solid border-gray-200 mb-8"
+          style={{ boxShadow: "0 10px 28px rgba(0,0,0,.08)" }}
+        >
+          <p className="text-xl font-semibold">
+          If you want to learn something in life then come here
+          </p>
+          <p className="mt-6">
+          I have spent many good moments of my life here, studied here, got to learn a lot and had a lot of fun.
+          </p>
+          <div className="flex items-center mt-8">
+            <img
+              className="w-12 h-12 mr-4 rounded-full"
+              src="/Alok.jpg"
+              alt="Alok Kumar Pic"
+            />
+            <div>
+              <p>Alok Kumar</p>
+              <p className="text-sm text-gray-600">
+                MERN Stack Developer
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+    </div>
   </div>
 </section>
+
 
 <section className="bg-white dark:bg-gray-900">
   <div className="max-w-screen-xl px-4 py-8 mx-auto lg:py-24 lg:px-6">
@@ -315,8 +373,8 @@ const Home = () => {
         Python for Data Science
         </p>
         <div className="flex items-baseline justify-center my-8">
-          <span className="mr-2 text-5xl font-extrabold">$499</span>
-          <span className="text-gray-500 dark:text-gray-400">/month</span>
+          <span className="mr-2 text-5xl font-extrabold">7999 RS</span>
+          <span className="text-gray-500 dark:text-gray-400">6/month</span>
         </div>
         {/* List */}
         <ul role="list" className="mb-8 space-y-4 text-left">
@@ -419,8 +477,8 @@ const Home = () => {
         MEAN Stack Developer 
         </p>
         <div className="flex items-baseline justify-center my-8">
-          <span className="mr-2 text-5xl font-extrabold">$499</span>
-          <span className="text-gray-500 dark:text-gray-400">/month</span>
+          <span className="mr-2 text-5xl font-extrabold">8999 RS</span>
+          <span className="text-gray-500 dark:text-gray-400">/6 month</span>
         </div>
         {/* List */}
         <ul role="list" className="mb-8 space-y-4 text-left">

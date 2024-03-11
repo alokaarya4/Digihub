@@ -12,7 +12,6 @@ const UpdateBadges = () => {
   const fetchUserData = async () => {
     const res = await fetch("http://localhost:5000/badge/getbyid/" + id);
     console.log(res.status);
-
     const data = await res.json();
     console.log(data);
     setUserData(data);
