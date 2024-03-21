@@ -52,13 +52,12 @@ const BrowserBadge = () => {
   }
 
   return (
+  
+    <>
     <div className='bg-purple-200'>
-       
-        <div className=''> 
-        <label
-    className="mx-auto relative bg-white min-w-sm max-w-2xl flex flex-col md:flex-row items-center justify-center border py-2 px-2 rounded-2xl gap-2 shadow-2xl focus-within:border-gray-300"
-    htmlFor="search-bar"
-  >
+      <div className='p-28'>
+       <label className="mx-auto relative bg-white min-w-sm max-w-2xl flex flex-col md:flex-row items-center justify-center border py-2 px-2 rounded-2xl gap-2 shadow-2xl focus-within:border-gray-300"
+       htmlFor="search-bar">
     <input
       id="search-bar"
       ref={browseRef}
@@ -69,6 +68,7 @@ const BrowserBadge = () => {
       <div className="relative">
         
         <div className="flex items-center justify-center h-3 w-3 absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 transition-all">
+          
           <svg
             className="opacity-0 animate-spin w-full h-full"
             xmlns="http://www.w3.org/2000/svg"
@@ -98,13 +98,17 @@ const BrowserBadge = () => {
       </div>
     </button>
   </label>
-        </div>
+  </div>
+  </div>
 
-      <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray- py-6 sm:py-12">
+      <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray sm:py-12">
         <div className="mx-auto max-w-screen-xl px-4 w-full">
-          <h2 className="mb-4 flex justify-center font-semibold text-6xl text-black ">
-            Badges
+          <h2 className="mb-4 flex  font-semibold text-4xl text-slate-700">
+            BADGES
           </h2>
+
+          <div className="pt-6 mt-6 space-y-4 border-t border-gray-200 dark:border-gray-700">
+            </div>
 
           <div className="grid py-16 w-full sm:grid-cols-2 xl:grid-cols-4 gap-6">
             {displayBadges()}
@@ -112,7 +116,7 @@ const BrowserBadge = () => {
         </div>
       </div>
 
-    </div>
+      </>
   )
 }
 

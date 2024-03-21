@@ -55,7 +55,7 @@ const IssueBadge = ({ studentData }) => {
         return badgeList.map((badge) => (
 
             <div className="border border-gray-500">
-                <img className='card-img-top' src={"http://localhost:5000/" + badge.image} alt="" />
+                <img className='card-img-top' src={"http://localhost:5000/" + badge.image } alt="" />
                 <div className="card-body">
                     <p>{badge.title}</p>
                     <button className='bg-blue-400 hover:bg-blue-600 text-white w-full rounded-sm' onClick={() => { issueBadge(badge._id) }}>Issue Badge</button>

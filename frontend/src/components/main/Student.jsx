@@ -67,10 +67,11 @@ const Student = () => {
 
   const displayBadges = () => {
     return issuedBadges.map((badge) => (
+      
       <div>
-        <h1 className='p-4 font-semibold text-black '>Badge ID :- {badge.badge.badgeId}</h1>
-        <h1 className='p-4 font-semibold text-black '>Category :- {badge.badge.category}</h1>
-        <div className=" border mt-8 w-52" key={badge._id}>
+        <h1 className='p-4 font-semibold text-black'>Badge ID :- {badge.badge.badgeId}</h1>
+        <h1 className='p-4 font-semibold text-black'>Category :- {badge.badge.category}</h1>
+        <div className="border mt-8 w-52" key={badge._id}>
           <img className='w-52' src={"http://localhost:5000/" + badge.badge.image} alt="" />
           <div className="card-body">
             <button className='bg-blue-400 hover:bg-blue-600 text-white w-52 rounded-sm'>View Badge</button>
@@ -82,7 +83,7 @@ const Student = () => {
 
   const displayStudentData = () => {
     if (studentData !== null) {
-      return <div className="grid grid-cols-2 lg:col-span-7">
+      return <div className="grid grid-cols-2 text-black lg:col-span-7">
         <h1 className='font-semibold p-4'>Registration Number :- {studentData.registrationNumber}</h1>
         <h1 className='font-semibold p-4'>Name :- {studentData.fullName}</h1>
         <h1 className='font-semibold p-4'>Email Address :- {studentData.emailAddress}</h1>
@@ -95,28 +96,26 @@ const Student = () => {
         {displayBadges()}
       </div>
     } else {
-      return <h1 className='text-black font-semibold text-center'>Enter Student Registration Number to Search Here</h1>
+      return <h1 className='text-black font-semibold text-center'>Enter Student Registration Number to Search Here....</h1>
     }
   }
 
   return (
     <>
-           <div className='justify-center flex'>
-      <div className='shadow-lg rounded-lg bg-purple-100 shadow-slate-300 w-max p-10 mt-10'>
-        <h1 className='text-center text-4xl font-bold'>Student Profile</h1>
-
+    
+      <div className='justify-center flex bg-purple-200'>
+      <div className='p-10 mt-10'>
+        <h1 className='text-center text-4xl hover:text-5xl duration-1000 hover:text-blue-600 font-bold'>STUDENT PROFILE</h1>
         <div>
-          <div className="flex  items-center justify-center my-10">
-            <div className="flex rounded-full bg-[#0d1829] px-2 w-full max-w-[600px]">
-              <button className="self-center flex p-1 cursor-pointer bg-[#0d1829]">
-              </button>
+          <div className="flex items-center justify-center my-10">
+            <div className="flex rounded-full bg-white px-2 w-full max-w-[600px]">
               <input
                 type="text"
                 ref={searchRef}
-                className="w-full bg-[#0d1829] flex bg-transparent pl-2 text-[#cccccc] outline-0"
+                className="w-full flex bg-transparent pl-2 text-slate-600 font-semibold outline-0"
                 placeholder="Your Registration Number"
               />
-              <button type="submit" className="relative p-2 bg-[#0d1829] rounded-full" onClick={searchStudent}>
+              <button type="submit" className="relative p-2 bg-white rounded-full" onClick={searchStudent}>
                 <svg
                   width="30px"
                   height="30px"
@@ -163,16 +162,6 @@ const Student = () => {
               Allows companies to create, manage and monitor their credentialing, certificate, or badge program from start to finish.
             </p>
             <div className="pt-6 mt-6 space-y-4 border-t border-gray-200 dark:border-gray-700">
-              <div>
-                <a
-                  href="#"
-                  className="inline-flex items-center text-base font-medium text-purple-600 hover:text-purple-800 dark:text-purple-500 dark:hover:text-purple-700"
-                >
-                  Learn More
-
-                </a>
-              </div>
-
             </div>
           </div>
           <div className="col-span-2 space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0">
@@ -216,28 +205,7 @@ const Student = () => {
         </div>
       </section>
 
-      <section className="bg-gray-50 dark:bg-gray-800">
-        <div className="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-24 lg:px-6">
-          <figure className="max-w-screen-md mx-auto">
-            <svg
-              className="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600"
-              viewBox="0 0 24 27"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
-                fill="currentColor"
-              />
-            </svg>
-            <blockquote>
-              <p className="text-xl font-medium text-gray-900 md:text-2xl dark:text-white">
-                Badges mean nothing in themselves, but they mark a certain achievement and they are a link between the rich and the poor.
-              </p>
-            </blockquote>
-          </figure>
-        </div>
-      </section>
+     
 
 
     </>

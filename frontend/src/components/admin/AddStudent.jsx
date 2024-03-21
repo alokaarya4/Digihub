@@ -71,13 +71,13 @@ const uploadFile = async (e) => {
     <div className="min-h-screen p-6 bg-purple-200 flex items-center justify-center">
       <div className="container max-w-screen-lg mx-auto">
         <div>
-          <h2 className="font-bold text-2xl text-center my-6 underline">Add Student Form</h2>
-          <div className="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
+          <h2 className="font-bold text-slate-800 text-4xl my-6">STUDENT FORM</h2>
+          <div className="bg-white rounded-xl shadow-lg p-4 px-4 md:p-8 mb-6">
             <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
               <div className="text-gray-600">
-                <img className="h-80 mb-5 shadow-slate-300 shadow-lg" src="/ASF.jfif"></img>
-                <p className="font-medium text-2xl">Personal Details</p>
-                <p>Please fill out all the fields.</p>
+                <img className="h-80 mb-5 shadow-slate-300 mt-8" src="/formpic.jpg"></img>
+                <p className="font-medium text-center text-2xl">Personal Details</p>
+                <p className='text-center'>Please fill out all the fields.</p>
               </div>
 
               <div className="lg:col-span-2">
@@ -115,7 +115,7 @@ const uploadFile = async (e) => {
                       placeholder="" onChange={AddStudent.handleChange} value={AddStudent.values.emailAddress}
                     />
                   </div>
-                  <div className="md:col-span-3">
+                  <div className="md:col-span-5">
                     <label htmlFor='address' className='font-semibold'>Address</label>
                     <input
                       type="text"
@@ -138,37 +138,34 @@ const uploadFile = async (e) => {
                     />
                   </div>
                   
-                  <div className="md:col-span-2">
+                  <div className="md:col-span-3">
                     <label htmlFor='country' className='font-semibold'>Country</label>
-                    <div className="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
                       <input
                         type='text'
                         name="country"
                         id="country"
                         placeholder=""
-                        className="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent"
+                        className="px-4 bg-gray-50 rounded border mt-1 h-10 text-gray-800 w-full"
                         defaultValue="" onChange={AddStudent.handleChange} value={AddStudent.values.country}
                       />
                     </div>
-                  </div>
 
 
                   <div className="md:col-span-2">
                     <label htmlFor='state' className='font-semibold'>State</label>
-                    <div className="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
                       <input
                         name="state"
                         id="state"
                         placeholder=""
-                        className="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent"
+                        className="px-4 bg-gray-50 border rounded mt-1 h-10 text-gray-800 w-full"
                         defaultValue=""  onChange={AddStudent.handleChange} value={AddStudent.values.state}
                       />
                     </div>
-                  </div>
+                    
                   <div className="md:col-span-1">
                     <label htmlFor="pincode" className='font-semibold'>Pincode</label>
                     <input
-                      type="number"
+                      type="text"
                       name="pinCode"
                       id='pincode'
                       className="transition-all flex items-center h-10 border mt-1 rounded px-4 w-full bg-gray-50"
@@ -179,24 +176,21 @@ const uploadFile = async (e) => {
 
                   <div className="md:col-span-2">
                     <label htmlFor='mobileNumber' className='font-semibold'>Mobile Number</label>
-                    <div className="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
                       <input
-                        type='number'
+                        type='text'
                         name="mobileNumber"
                         id="mobileNumber"
                         placeholder=""
-                        className="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent"
+                        className="px-4 bg-gray-50 border rounded mt-1 h-10 text-gray-800 w-full"
                         defaultValue="" onChange={AddStudent.handleChange} value={AddStudent.values.mobileNumber}
                       />
-                    
-                     
                     </div>
-                  </div>
+                  
                  
                  
-                  <div className="md:col-span-5 mt-6 text-right">
+                  <div className="md:col-span-5 mt-4 text-right">
                     <div className="inline-flex items-end">
-                      <button className="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                      <button className="bg-blue-500  hover:bg-blue-800 active:bg-green-500 text-white font-semibold py-2 px-8 rounded-md">
                         Submit
                       </button>
                     </div>
