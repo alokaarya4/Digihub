@@ -21,7 +21,7 @@ const ViewBadge = () => {
 
   const displayBadgeData = () => {
     if (badgeData !== null) {
-      return (<div className="grid grid-cols-2">
+      return (<div className="grid bg-purple-100 grid-cols-2">
         <div className="max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-4 lg:pt-28">
           <div className="relative flex flex-col shadow-md rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 max-w-sm">
             <div className="h-auto overflow-hidden">
@@ -46,11 +46,13 @@ const ViewBadge = () => {
   }
 
   return (
-    <div>
+    <div className='bg-purple-100'>
       <div>
-        <h1 className="text-center text-6xl font-bold pt-10">
-          View Badges
+        <h1 className="text-center text-slate-600 text-4xl font-bold pt-10">
+          VIEW BADGES
         </h1>
+          <div className="pt-6 mt-6 space-y-4 mx-64 border-t border-gray-300 dark:border-gray-700">
+            </div>
       </div>
       <section className="bg-white dark:bg-gray-900">
 

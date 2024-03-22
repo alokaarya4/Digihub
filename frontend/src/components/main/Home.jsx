@@ -65,9 +65,9 @@ const Home = () => {
   </div>
 </section>
 
-<section className="bg-purple-100 "> 
+<section className="bg-purple-100"> 
 <marquee velocity={25} scrollamount="20">
-  <div className="max-w-screen-xl lg:pb-16">
+  <div className="max-w-screen-xl">
     <div className="grid grid-cols-2 gap-8 text-gray-500 sm:gap-12 sm:grid-cols-3 lg:grid-cols-6 dark:text-gray-400">
       <a href="" className="flex items-center lg:justify-center">
         <img src="/MERN-logo.png" />
@@ -105,6 +105,7 @@ const Home = () => {
       <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">
       Allows companies to create, manage and monitor their credentialing, certificate, or badge program from start to finish.
       </p>
+
       <div className="pt-6 mt-6 space-y-4 border-t border-gray-200 dark:border-gray-700">
         <div>
           <a
@@ -114,7 +115,7 @@ const Home = () => {
             Learn More
           </a>
         </div>
-        
+ 
       </div>
     </div>
     <div className="col-span-2 space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0">
@@ -250,7 +251,7 @@ const Home = () => {
 
 
 <section className="bg-white dark:bg-gray-900">
-  <div className="max-w-screen-xl px-4 py-8 mx-auto lg:py-24 lg:px-6">
+  <div className="max-w-screen-xl px-4 py-8 mx-auto lg:px-6">
     <div className="max-w-screen-md mx-auto mb-8 text-center lg:mb-12">
       <h2 className="mb-4 text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white">
        Our Popular Courses
@@ -466,7 +467,7 @@ const Home = () => {
           </li>
         </ul>
         <button
-          className="text-white bg-purple-600 hover:bg-purple-900 active:bg-blue-800 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900"
+          className="text-white bg-purple-600 hover:bg-purple-900 active:bg-blue-800 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900" onClick={() => {navigate('/main/registrationform')}}
         >
          Registration Now
         </button>
@@ -571,7 +572,7 @@ const Home = () => {
         </ul>
         <button
           
-          className="text-white bg-purple-600 hover:bg-purple-900 active:bg-blue-800 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900"
+          className="text-white bg-purple-600 hover:bg-purple-900 active:bg-blue-800 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900"  onClick={() => {navigate('/main/registrationform')}}
         >
          Registration Now
         </button>
@@ -581,7 +582,11 @@ const Home = () => {
   </div>
 </section>
 
-    
+<section>
+     <a href='#' className='text-center flex justify-center text-xl text-purple-800 font-semibold'
+       onClick={() => {navigate('/main/coursescard')}}
+       >Click More Courses</a>
+</section>
     </div>
   )
 }

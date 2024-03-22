@@ -60,10 +60,10 @@ const ManageBadges = () => {
                             <td>{user.description}</td>
                             <td>{user.file}</td>
                             <td>
-                                <button className='bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' onClick={() => { deleteUser(user._id) }}>Delete user</button>
+                                <button className='bg-red-500 hover:bg-blue-700 active:bg-red-800 text-white font-bold py-2 px-4 rounded' onClick={() => { deleteUser(user._id) }}>Delete user</button>
                             </td>
                             <td>
-                                <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' onClick={() => { navigate('/admin/updatebadges/' + user._id) }} > Edit User</button>
+                                <button className='bg-blue-500 hover:bg-blue-700 active:bg-green-500 text-white font-bold py-2 px-4 rounded' onClick={() => { navigate('/admin/updatebadges/' + user._id) }} > Edit User</button>
                             </td>
                         </tr>
                     )
@@ -74,9 +74,8 @@ const ManageBadges = () => {
     }
 
     return (
-        <div>
-            <h1 className='text-center my-8 text-3xl'>Manage Badges Data</h1>
-            <hr />
+        <div className='bg-purple-300'>
+             <h1 className='text-center hover:text-6xl hover:text-blue-800 duration-1000 p-20 font-semibold text-5xl'>BADGE DATA</h1>
             <div className='container'>
                 {displayUsers()}
 

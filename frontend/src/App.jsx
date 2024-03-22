@@ -23,6 +23,7 @@ import UpdateBadges from './components/admin/UpdateBadges';
 import BadgeAdd from './components/admin/BadgeAdd';
 import AdminAuth from './auth/AdminAuth';
 import RegistrationForm from './components/main/RegistrationForm';
+import CoursesCard from './components/main/CoursesCard';
 
 function App() {
 
@@ -44,6 +45,7 @@ function App() {
                 <Route path='browserbadge' element={<BrowserBadge />} />
                 <Route path='viewbadge/:id' element={<ViewBadge />} />
                 <Route path='registrationform/' element={<RegistrationForm />} />
+                <Route path='coursescard/' element={<CoursesCard />} />
               </Route>
 
 

@@ -39,14 +39,14 @@ const displayUsers = () => {
 
         <thead className='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
             <tr>
-                <th>id</th>
+                <th className='p-2'>id</th>
                 <th>name</th>
                 <th>email</th>
                 <th>password</th>
-                <th></th>
+                <th>Delete User</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody className='bg-yellow-100'>
             {
                 userlist.map((user) => (
                     <tr>
@@ -55,11 +55,9 @@ const displayUsers = () => {
                         <td>{user.email}</td>
                         <td>{user.password}</td>
                         <td>
-                            <button className='bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' onClick={() => { deleteUser(user._id) }}>Delete user</button>
+                            <button className='bg-red-500 hover:bg-blue-700 active:bg-red-800 text-white font-bold py-2 px-4 rounded' onClick={() => { deleteUser(user._id) }}>Delete User</button>
                         </td>
-                        <td>
-                            <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' onClick={()=> {navigate('/updateuser/'+user._id)}} > Edit User</button>
-                        </td>
+                       
                     </tr>
                 )
                 )
@@ -69,9 +67,8 @@ const displayUsers = () => {
 }
 
   return (
-    <div>
-        <h1 className='text-center'>Manage User data</h1>
-        <hr />
+    <div className='bg-purple-300'>
+        <h1 className='text-center hover:text-6xl hover:text-blue-800 duration-1000 p-20 font-semibold text-5xl'>USER DATA</h1>
         <div className='container'>
             {displayUsers()}
 

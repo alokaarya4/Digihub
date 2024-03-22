@@ -79,15 +79,16 @@ const IssueBadge = ({ studentData }) => {
 
     return (
         <div className='p-5'>
-            <h2 className='text-center mb-4 text-2xl font-bold'>Issue Badge to {studentData.fullName}</h2>
+            <h2 className='text-center text-slate-600 mb-4 text-2xl font-bold'>ISSUE BADGE TO : {studentData.fullName}</h2>
             <hr />
-            <h4 className='mt-4 font-bold text-2xl mb-4'>Available Badges</h4>
+            <h4 className='mt-4 text-slate-600 font-bold text-2xl mb-4'>AVAILABLE BADGES</h4>
             <div className='grid grid-cols-6 gap-5'>
-
-                {displayBadges()}
+            {displayBadges()}
             </div>
+
+            <div className="pt-2 mt-4 space-y-4 border-t border-gray-200 dark:border-gray-700"></div>
             
-            <h4 className='mt-4 font-bold mb-4 text-2xl'>Issued Badges</h4>
+            <h4 className='mt-4 text-slate-600 font-bold mb-4 text-2xl'>ISSUED BADGES</h4>
             <div className='grid grid-cols-6 gap-5'>
                 
 

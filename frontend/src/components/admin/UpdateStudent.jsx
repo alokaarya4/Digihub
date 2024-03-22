@@ -57,6 +57,7 @@ const UpdateStudent = () => {
         title: 'Update Success!!',
         text: 'Student Updated successfully'
       });
+      navigate('/admin/managestudent');
     } else {
       Swal.fire({
         icon: 'error',
@@ -120,7 +121,7 @@ const UpdateStudent = () => {
                 return (
 
                   <form onSubmit={updateUserForm.handleSubmit}>
-                    <div className="min-w-screen min-h-screen bg-gray-900 flex items-center justify-center px-5 py-5">
+                    <div className="min-w-screen min-h-screen bg-purple-200 flex items-center justify-center px-5 py-5">
                       <div
                         className="bg-gray-100 text-gray-500 rounded-3xl shadow-xl w-full overflow-hidden"
                         style={{ maxWidth: 1000 }}
@@ -328,16 +329,16 @@ const UpdateStudent = () => {
                           </div>
                           <div className="w-full md:w-1/2 py-10 px-5 md:px-10">
                             <div className="text-center mb-10">
-                              <h1 className="font-bold text-3xl text-gray-900">Update Student Form</h1>
+                              <h1 className="font-bold text-3xl text-gray-900">UPDATE STUDENT FORM</h1>
                               <p>Enter your information to update</p>
-                              <button type="button" onClick={openModal} className="block max-w-xs mx-auto my-3  bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-2 font-semibold">
-                                    Issue Badge
+                              <button type="button" onClick={openModal} className="block max-w-xs mx-auto my-3  bg-indigo-500 active:bg-green-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-2 font-semibold">
+                                    ISSUE BADGE
                                   </button>
                             </div>
                             <div>
                               <div className="flex -mx-3">
                                 <div className="w-full px-3 mb-5">
-                                  <label htmlFor="" className="text-xs font-semibold px-1">
+                                  <label htmlFor="regritrationNumber" className="text-xs font-semibold px-1">
                                     Registration Number
                                   </label>
                                   <div className="flex">
@@ -356,7 +357,7 @@ const UpdateStudent = () => {
                               </div>
                               <div className="flex -mx-3">
                                 <div className="w-full px-3 mb-5">
-                                  <label htmlFor="" className="text-xs font-semibold px-1">
+                                  <label htmlFor="fullName" className="text-xs font-semibold px-1">
                                     Full Name
                                   </label>
                                   <div className="flex">
@@ -375,7 +376,7 @@ const UpdateStudent = () => {
                               </div>
                               <div className="flex -mx-3">
                                 <div className="w-full px-3 mb-5">
-                                  <label htmlFor="" className="text-xs font-semibold px-1">
+                                  <label htmlFor="emailAddress" className="text-xs font-semibold px-1">
                                     Email Address
                                   </label>
                                   <div className="flex">
@@ -392,7 +393,7 @@ const UpdateStudent = () => {
                               </div>
                               <div className="flex -mx-3">
                                 <div className="w-full px-3 mb-5">
-                                  <label htmlFor="" className="text-xs font-semibold px-1">
+                                  <label htmlFor="address" className="text-xs font-semibold px-1">
                                     Address
                                   </label>
                                   <div className="flex">
@@ -409,7 +410,7 @@ const UpdateStudent = () => {
                               </div>
                               <div className="flex -mx-3">
                                 <div className="w-1/2 px-3 mb-5">
-                                  <label htmlFor="" className="text-xs font-semibold px-1">
+                                  <label htmlFor="city" className="text-xs font-semibold px-1">
                                     City
                                   </label>
                                   <div className="flex">
@@ -424,7 +425,7 @@ const UpdateStudent = () => {
                                   </div>
                                 </div>
                                 <div className="w-1/2 px-3 mb-5">
-                                  <label htmlFor="" className="text-xs font-semibold px-1">
+                                  <label htmlFor="country" className="text-xs font-semibold px-1">
                                     Country
                                   </label>
                                   <div className="flex">
@@ -442,7 +443,7 @@ const UpdateStudent = () => {
 
                               <div className="flex -mx-3">
                                 <div className="w-1/2 px-3 mb-8">
-                                  <label htmlFor="" className="text-xs font-semibold px-1">
+                                  <label htmlFor="state" className="text-xs font-semibold px-1">
                                     State
                                   </label>
                                   <div className="flex">
@@ -457,14 +458,14 @@ const UpdateStudent = () => {
                                   </div>
                                 </div>
                                 <div className="w-1/2 px-3 mb-5">
-                                  <label htmlFor="" className="text-xs font-semibold px-1">
+                                  <label htmlFor="pinCode" className="text-xs font-semibold px-1">
                                     Pin Code
                                   </label>
                                   <div className="flex">
                                     <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
                                     </div>
                                     <input
-                                      type="number"
+                                      type="text"
                                       id="pinCode"
                                       className="w-full -ml-10 pl-2 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
                                       placeholder="" onChange={updateUserForm.handleChange} value={updateUserForm.values.pinCode}
@@ -472,14 +473,14 @@ const UpdateStudent = () => {
                                   </div>
                                 </div>
                                 <div className="w-1/2 px-3 mb-5">
-                                  <label htmlFor="" className="text-xs font-semibold px-1">
+                                  <label htmlFor="mobileNumber" className="text-xs font-semibold px-1">
                                    Mobile Number
                                   </label>
                                   <div className="flex">
                                     <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
                                     </div>
                                     <input
-                                      type="number"
+                                      type="text"
                                       id="mobileNumber"
                                       className="w-full -ml-10 pl-2 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
                                       placeholder="" onChange={updateUserForm.handleChange} value={updateUserForm.values.mobileNumber}
@@ -492,7 +493,7 @@ const UpdateStudent = () => {
 
                               <div className="flex -mx-3">
                                 <div className="w-full px-3 mb-5">
-                                  <button className="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">
+                                  <button className="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 active:bg-green-500 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">
                                     UPADTE NOW
                                   </button>
 

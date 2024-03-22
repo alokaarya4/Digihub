@@ -117,7 +117,7 @@ const Login = () => {
                     </label>
                   </div>
                   <div className="relative">
-                    <button type="submit" className="bg-cyan-500 text-white rounded-md px-2 py-1">
+                    <button type="submit" className="bg-cyan-500 hover:bg-blue-800 active:bg-green-500 text-white rounded-md px-4 py-1 mt-4">
                       Login
                     </button>
                   </div>

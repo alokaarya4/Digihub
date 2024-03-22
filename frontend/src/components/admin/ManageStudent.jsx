@@ -36,19 +36,11 @@ const ManageStudent = () => {
   }
 
 
-  const displayUser = () => {
-    return <table>
-
-
-    </table>
-
-  }
 
 
   const displayUsers = () => {
     return <table className ='w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400'>
-
-        <thead className='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
+        <thead className='text-xs  text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
             <tr>
                 <th>Registration Number</th>
                 <th>Full Name</th>
@@ -77,10 +69,10 @@ const ManageStudent = () => {
                         <td>{user.pinCode}</td>
                         <td>{user.mobileNumber}</td>
                         <td>
-                            <button className='bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' onClick={() => { deleteUser(user._id) }}>Delete user</button>
+                            <button className='bg-red-500 hover:bg-blue-700 active:bg-red-700 text-white font-bold py-2 px-4 rounded' onClick={() => { deleteUser(user._id) }}>Delete user</button>
                         </td>
                         <td>
-                            <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' onClick={()=> {navigate('/admin/UpdateStudent/'+user._id)}} > Edit User</button>
+                            <button className='bg-blue-500 hover:bg-blue-700 active:bg-green-500 text-white font-bold py-2 px-4 rounded' onClick={()=> {navigate('/admin/UpdateStudent/'+user._id)}} > Edit User</button>
                         </td>
                     </tr>
                 )
@@ -91,9 +83,8 @@ const ManageStudent = () => {
 }
 
   return (
-    <div>
-        <h1 className='text-center my-8 font-bold text-4xl'>Manage Student Data</h1>
-        <hr />
+    <div className='bg-purple-300'>
+        <h1 className='text-center hover:text-6xl hover:text-blue-800 duration-1000 p-20 font-semibold text-5xl'>STUDENT DATA</h1>
         <div className='container'>
             {displayUsers()}
 
